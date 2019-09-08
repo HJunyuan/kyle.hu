@@ -12,7 +12,7 @@ import { Container } from "react-bootstrap";
 
 import Header from "./header";
 
-export default function Layout({ children }) {
+export default function Layout({ children, noNav }) {
 	const query = useStaticQuery(graphql`
 		{
 			site {
@@ -25,7 +25,7 @@ export default function Layout({ children }) {
 
 	return (
 		<React.Fragment>
-			<Header />
+			{noNav ? null : <Header />}
 			<Container className="pt-4">{children}</Container>
 			<footer>
 				© {new Date().getFullYear()}, {query.site.siteMetadata.title}
