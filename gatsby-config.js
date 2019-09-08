@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: `Kyle Huang Junyuan`,
-		description: `Improving lives with technology.`,
+		description: `Improving lives with technology`,
 		author: `@HJunyuan`
 	},
 	plugins: [

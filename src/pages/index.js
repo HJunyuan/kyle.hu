@@ -25,10 +25,10 @@ export default function IndexPage({ data }) {
 			</div>
 
 			<Element name="content" />
-			<Layout>
+			<Layout className={Styles.content}>
 				<h2>Projects</h2>
 				<CardScroll data={data.projects} />
-
+				<Button>View all projects</Button>
 				<h2>Blog</h2>
 				<CardScroll data={data.blogs} />
 			</Layout>

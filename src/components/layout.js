@@ -15,11 +15,11 @@ import "typeface-source-sans-pro";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./layout.css";
 
-export default function Layout({ children, noNav }) {
+export default function Layout({ children, noNav, className }) {
 	return (
 		<React.Fragment>
 			{noNav ? null : <Header />}
-			<Container className="pt-4">{children}</Container>
+			<Container className={className}>{children}</Container>
 			<Footer />
 		</React.Fragment>
 	);
