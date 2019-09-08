@@ -8,7 +8,7 @@ import styles from "./header.module.css";
 export default function Header() {
 	const query = useStaticQuery(graphql`
 		{
-			placeholderImage: file(relativePath: { eq: "site-icon.png" }) {
+			img: file(relativePath: { eq: "site-icon.png" }) {
 				childImageSharp {
 					fixed(width: 50) {
 						...GatsbyImageSharpFixed
@@ -19,10 +19,10 @@ export default function Header() {
 	`);
 
 	return (
-		<Navbar collapseOnSelect expand="lg" className={styles.navBar}>
+		<Navbar collapseOnSelect expand="lg" className={styles.navBar} bg="dark" variant="dark" sticky="top">
 			<Container>
 				<Navbar.Brand href="/">
-					<Img fixed={query.placeholderImage.childImageSharp.fixed} alt="Site logo" />
+					<Img fixed={query.img.childImageSharp.fixed} alt="Site logo" />
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
