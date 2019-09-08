@@ -1,7 +1,27 @@
 html {
-	background-color: #f4f4f4;
+	background-color: #fdfffc;
 }
 
 body {
 	background-color: inherit;
+	font-family: "Source Sans Pro", "Times New Roman", Times, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn {
+	border-radius: 0.5em;
+	background-color: #235789;
+	border: none;
+}
+
+.btn:hover {
+	background-color: #161925;
 }
