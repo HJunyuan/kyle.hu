@@ -1,21 +1,74 @@
 import React from "react";
-import { Link } from "gatsby";
+import { graphql } from "gatsby";
+// import { Link } from "gatsby";
 
-import Layout from "../components/layout";
-import Image from "../components/image";
 import SEO from "../components/seo";
+import Layout from "../components/layout";
+import CardScroll from "../components/cardScroll";
 
-const IndexPage = () => (
-	<Layout>
-		<SEO title="Home" />
-		<h1>Hi people</h1>
-		<p>Welcome to your new Gatsby site.</p>
-		<p>Now go build something great.</p>
-		<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-			<Image />
-		</div>
-		<Link to="/page-2/">Go to page 2</Link>
-	</Layout>
-);
+export default function IndexPage({ data }) {
+	return (
+		<Layout>
+			<SEO title="Home" />
+			<h1>Kyle Huang Junyuan</h1>
+			<p>Improving lives with technology.</p>
 
-export default IndexPage;
+			<h2>Projects</h2>
+			<CardScroll data={data.projects} />
+
+			<h2>Blog</h2>
+			<CardScroll data={data.blogs} />
+		</Layout>
+	);
+}
+
+export const query = graphql`
+	{
+		projects: allMarkdownRemark(
+			filter: { frontmatter: { category: { eq: "projects" } } }
+			sort: { order: DESC, fields: frontmatter___date }
+			limit: 10
+		) {
+			edges {
+				node {
+					frontmatter {
+						title
+						description
+						path
+						published
+						coverImg {
+							childImageSharp {
+								fluid(maxHeight: 300) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		blogs: allMarkdownRemark(
+			filter: { frontmatter: { category: { eq: "blog" } } }
+			sort: { order: DESC, fields: frontmatter___date }
+			limit: 10
+		) {
+			edges {
+				node {
+					frontmatter {
+						title
+						description
+						path
+						published
+						coverImg {
+							childImageSharp {
+								fluid(maxHeight: 300) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+`;

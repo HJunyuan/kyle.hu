@@ -7,15 +7,14 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
+import { Container } from "react-bootstrap";
 
 import Header from "./header";
-import Card from "./card";
-import "./layout.css";
 
-const Layout = ({ children }) => {
-	const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
+export default function Layout({ children }) {
+	const query = useStaticQuery(graphql`
+		{
 			site {
 				siteMetadata {
 					title
@@ -25,30 +24,18 @@ const Layout = ({ children }) => {
 	`);
 
 	return (
-		<>
-			<Header siteTitle={data.site.siteMetadata.title} />
-			<div
-				style={{
-					margin: `0 auto`,
-					maxWidth: 960,
-					padding: `0px 1.0875rem 1.45rem`,
-					paddingTop: 0
-				}}
-			>
-				<Card></Card>
-				<main>{children}</main>
-				<footer>
-					© {new Date().getFullYear()}, Built with
-					{` `}
-					<a href="https://www.gatsbyjs.org">Gatsby</a>
-				</footer>
-			</div>
-		</>
+		<React.Fragment>
+			<Header />
+			<Container className="pt-4">{children}</Container>
+			<footer>
+				© {new Date().getFullYear()}, {query.site.siteMetadata.title}
+				<br />
+				All rights reserved.
+			</footer>
+		</React.Fragment>
 	);
-};
+}
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired
 };
-
-export default Layout;

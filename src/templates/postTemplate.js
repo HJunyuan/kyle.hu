@@ -24,10 +24,9 @@ export const query = graphql`
 		markdownRemark(frontmatter: { path: { eq: $path } }) {
 			html
 			frontmatter {
-				date(formatString: "MMMM DD, YYYY")
+				date(formatString: "DD MMMM YYYY")
 				path
 				title
-				published
 				coverImg {
 					childImageSharp {
 						fluid(maxHeight: 300) {
