@@ -4,9 +4,10 @@
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
+
 	height: 300px;
 	width: 100%;
-
+	margin-top: 50px;
 	text-align: center;
 	background-color: gainsboro;
 }

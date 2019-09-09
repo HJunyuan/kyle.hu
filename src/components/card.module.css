@@ -22,7 +22,7 @@
 }
 
 .cardImage {
-	order: 1;
+	order: 0;
 	height: 170px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .cardDescription {
-	order: 2;
+	order: 1;
 	margin: 1em;
 	height: 130px;
 }

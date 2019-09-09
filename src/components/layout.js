@@ -15,7 +15,7 @@ import "typeface-source-sans-pro";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./layout.css";
 
-export default function Layout({ children, noNav, className }) {
+export default function Layout({ children, className, noNav }) {
 	return (
 		<React.Fragment>
 			{noNav ? null : <Header />}
