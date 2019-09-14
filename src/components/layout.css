@@ -17,9 +17,11 @@ h6 {
 }
 
 .btn {
-	border-radius: 0.5em;
+	border-radius: 0;
+	border-width: 1px;
+	border-color: transparent;
+
 	background-color: #235789;
-	border: none;
 	font-weight: 600;
 }
 

@@ -52,7 +52,7 @@ export const query = graphql`
 						published
 						coverImg {
 							childImageSharp {
-								fluid(maxHeight: 300) {
+								fluid(maxWidth: 300) {
 									...GatsbyImageSharpFluid
 								}
 							}
@@ -75,7 +75,7 @@ export const query = graphql`
 						published
 						coverImg {
 							childImageSharp {
-								fluid(maxHeight: 300) {
+								fluid(maxWidth: 300) {
 									...GatsbyImageSharpFluid
 								}
 							}
