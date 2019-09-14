@@ -22,7 +22,7 @@ export default function Header() {
 		<Navbar collapseOnSelect expand="lg" className={styles.navBar} bg="dark" variant="dark" sticky="top">
 			<Container>
 				<Navbar.Brand href="/">
-					<Img fixed={query.img.childImageSharp.fixed} alt="Site logo" />
+					<Img fixed={query.img.childImageSharp.fixed} title="Home" alt="Kyle's Logo" />
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">

@@ -1,5 +1,7 @@
 .navBar {
-	background-color: inherit;
-	font-weight: 500;
+	/* font-weight: 500; */
 	margin-bottom: 50px;
+
+	font-size: 1.3em;
+	font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

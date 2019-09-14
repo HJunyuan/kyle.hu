@@ -11,7 +11,22 @@ export default function PostTemplate({
 }) {
 	const { markdownRemark } = data; // data.markdownRemark holds our post data
 	const { frontmatter, html } = markdownRemark;
-	return <Layout fluid>HELLO</Layout>;
+	return (
+		<Layout>
+			<SEO title={frontmatter.title} />
+			<div className={Styles.cardContainer}>
+				<div className={Styles.cardImage}>
+					<Img fluid={frontmatter.coverImg.childImageSharp.fluid} alt={frontmatter.title} />
+				</div>
+				<div className={Styles.content}>
+					<h1>{frontmatter.title}</h1>
+					<span className={Styles.date}>{frontmatter.date}</span>
+					<hr></hr>
+					<div className={Styles.innerContent} dangerouslySetInnerHTML={{ __html: html }} />
+				</div>
+			</div>
+		</Layout>
+	);
 }
 
 export const query = graphql`
@@ -33,20 +48,3 @@ export const query = graphql`
 		}
 	}
 `;
-
-{
-	/* <Layout>
-			<SEO title={frontmatter.title} />
-			<div className={Styles.cardContainer}>
-				<div className={Styles.cardImage}>
-					<Img fluid={frontmatter.coverImg.childImageSharp.fluid} alt={frontmatter.title} />
-				</div>
-				<div className={Styles.content}>
-					<h1>{frontmatter.title}</h1>
-					<span className={Styles.date}>{frontmatter.date}</span>
-					<hr></hr>
-					<div className={Styles.innerContent} dangerouslySetInnerHTML={{ __html: html }} />
-				</div>
-			</div>
-		</Layout> */
-}
