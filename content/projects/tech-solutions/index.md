@@ -9,6 +9,6 @@ category: ["projects"]
 tags: ["DIY"]
 ---
 
-# This is all about Tech Solutions
+## This is all about Tech Solutions
 
 Content goes here

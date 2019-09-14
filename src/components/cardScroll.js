@@ -12,19 +12,18 @@ export default function CardScroll({ data }) {
 			let { frontmatter } = element.node;
 			let { fluid } = element.node.frontmatter.coverImg.childImageSharp;
 
-			if (frontmatter.published)
-				cards.push(
-					<Card
-						image={fluid}
-						title={frontmatter.title}
-						description={frontmatter.description}
-						path={frontmatter.path}
-						key={i}
-					/>
-				);
+			cards.push(
+				<Card
+					image={fluid}
+					title={frontmatter.title}
+					description={frontmatter.description}
+					path={frontmatter.path}
+					key={i}
+				/>
+			);
 		});
 
-		for (let i = 5; i < 10; i++) cards.push(<Card key={i} />);
+		for (let i = 5; i < 9; i++) cards.push(<Card key={i} />);
 
 		return cards;
 	};

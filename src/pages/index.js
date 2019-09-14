@@ -13,15 +13,17 @@ export default function IndexPage({ data }) {
 	return (
 		<React.Fragment>
 			<SEO title="Home" />
-			<Img className={Styles.image} fluid={data.landingImage.childImageSharp.fluid} alt="Kyle Huang Junyuan" />
-			<div className={Styles.container}>
-				<div className={Styles.text}>
+			<div className={Styles.landingContainer}>
+				<Img className={Styles.landingImg} fluid={data.landingImage.childImageSharp.fluid} alt="Kyle Huang Junyuan" />
+
+				<div className={Styles.landingText}>
 					<h1>Kyle Huang</h1>
 					<p>Improving lives with technology</p>
+
+					<Link to="content" smooth={true}>
+						<Button className="mt-2">Let's go</Button>
+					</Link>
 				</div>
-				<Link to="content" smooth={true}>
-					<Button className="mt-2">Let's go</Button>
-				</Link>
 			</div>
 
 			<Element name="content" />
@@ -39,7 +41,7 @@ export default function IndexPage({ data }) {
 export const query = graphql`
 	{
 		projects: allMarkdownRemark(
-			filter: { frontmatter: { category: { eq: "projects" } } }
+			filter: { frontmatter: { category: { eq: "projects" }, published: { eq: true } } }
 			sort: { order: DESC, fields: frontmatter___date }
 			limit: 4
 		) {
@@ -62,7 +64,7 @@ export const query = graphql`
 			}
 		}
 		blogs: allMarkdownRemark(
-			filter: { frontmatter: { category: { eq: "blog" } } }
+			filter: { frontmatter: { category: { eq: "blog" }, published: { eq: true } } }
 			sort: { order: DESC, fields: frontmatter___date }
 			limit: 4
 		) {

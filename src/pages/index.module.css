@@ -1,40 +1,42 @@
-.image {
-	position: absolute;
+.landingContainer {
+	z-index: 0;
 	width: 100%;
 	height: 100vh;
-	top: 0;
-	left: 0;
-	z-index: 0;
+	position: relative;
+	overflow: hidden;
 }
 
-.container {
+.landingImg {
+	height: 100vh;
+}
+
+.landingText {
+	z-index: 1;
+	width: 100%;
+	height: 100vh;
+	padding: 0 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
-	top: 0;
-	left: 0;
 
-	width: 100%;
-	height: 100vh;
-	padding: 0 20px;
 	overflow: hidden;
 	background-color: null;
-	z-index: 1;
-}
 
-.text {
 	text-align: center;
 	color: aliceblue;
 }
 
-.text h1 {
+.landingText h1 {
 	font-size: 7vw;
 }
 
-.text p {
+.landingText p {
 	font-size: 2.47vw;
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
