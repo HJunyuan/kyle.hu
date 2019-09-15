@@ -38,6 +38,15 @@ module.exports = {
 				name: `images`,
 				path: `${__dirname}/src/images`
 			}
+		},
+		{
+			resolve: `gatsby-plugin-prefetch-google-fonts`,
+			options: {
+				fonts: [
+					{ family: "Poppins", variants: ["400", "500", "600", "700"] },
+					{ family: "Source Sans Pro", variants: ["300", "400", "500", "600", "700"] }
+				]
+			}
 		}
 		// {
 		// 	resolve: `gatsby-plugin-manifest`,
