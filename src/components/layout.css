@@ -1,9 +1,10 @@
 html {
-	background-color: #fdfffc;
+	background-color: rgb(253, 255, 252);
 }
 
 body {
 	background-color: inherit;
+	color: rgb(43, 57, 73);
 	font-family: "Source Sans Pro", "Times New Roman", Times, serif;
 }
 
@@ -18,13 +19,14 @@ h6 {
 
 .btn {
 	border-radius: 0;
-	border-width: 1px;
-	border-color: transparent;
+	/* border-width: 1px;
+	border-color: transparent; */
+	border-style: none;
 
-	background-color: #235789;
+	background-color: rgb(43, 57, 73);
 	font-weight: 600;
 }
 
 .btn:hover {
-	background-color: #161925;
+	background-color: rgb(14, 177, 210);
 }

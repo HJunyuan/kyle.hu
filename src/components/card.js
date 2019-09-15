@@ -27,6 +27,7 @@ export default function Card({ image, title, description, path }) {
 
 				<div className={styles.cardDescription}>
 					<h3>{truncate(title, 8)}</h3>
+					<hr />
 					<p>{truncate(description, 23)}</p>
 				</div>
 			</div>
