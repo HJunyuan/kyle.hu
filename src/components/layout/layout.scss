@@ -1,0 +1,32 @@
+html {
+	background-color: rgb(253, 255, 252);
+}
+
+body {
+	background-color: inherit;
+	color: rgb(3, 7, 10);
+	font-family: "Source Sans Pro", "Times New Roman", Times, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn {
+	border-radius: 0;
+	/* border-width: 1px;
+	border-color: transparent; */
+	border-style: none;
+
+	background-color: rgb(43, 57, 73);
+	font-weight: 600;
+}
+
+.btn:hover {
+	background-color: rgb(14, 177, 210);
+}
