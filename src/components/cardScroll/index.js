@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from "gatsby";
 
 import styles from "./cardScroll.module.css";
-import Card from "../components/card";
+import Card from "../card";
 
 export default function CardScroll({ data }) {
 	const generateCards = data => {
