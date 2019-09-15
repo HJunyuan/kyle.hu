@@ -1,0 +1,19 @@
+.btn.btn-primary {
+	border-radius: 0;
+	border-style: none;
+	padding: 10px 50px;
+
+	background-color: $grey-accent;
+	font-weight: 600;
+}
+
+.btn.btn-primary:hover {
+	border-radius: 0;
+	border-style: none;
+
+	background-color: $blue-accent;
+}
+
+.btn.btn-primary:active {
+	background-color: $blue-accent !important;
+}

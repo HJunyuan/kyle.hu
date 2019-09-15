@@ -21,7 +21,7 @@ export default function IndexPage({ data }) {
 					<p>Improving lives with technology</p>
 
 					<Link to="content" smooth={true}>
-						<Button className="mt-2">Let's go</Button>
+						<Button>Let's go</Button>
 					</Link>
 				</div>
 			</div>

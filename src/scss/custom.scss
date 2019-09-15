@@ -1,0 +1,27 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variables.scss";
+@import "./colours.scss";
+@import "./fonts.scss";
+@import "./buttons.scss";
+
+html {
+	background-color: $white-bg;
+}
+
+body {
+	background-color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-fam-heading;
+}
+
+p {
+	color: $black-font;
+	font-family: $font-fam-body;
+}

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-import styles from "./header.module.css";
+import "./header.scss";
 
 export default function Header() {
 	const query = useStaticQuery(graphql`

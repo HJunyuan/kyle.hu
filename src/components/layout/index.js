@@ -12,8 +12,8 @@ import Footer from "../footer";
 
 // import "typeface-poppins";
 // import "typeface-source-sans-pro";
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./layout.css";
+// import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../scss/custom.scss";
 
 export default function Layout({ children, className, noNav, fluid }) {
 	return (

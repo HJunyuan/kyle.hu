@@ -29,11 +29,11 @@
 	background-color: null;
 
 	text-align: center;
-	color: aliceblue;
 }
 
 .landingText h1 {
 	font-size: 7vw;
+	color: aliceblue;
 }
 
 .landingText p {
@@ -41,6 +41,7 @@
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
 	font-weight: 300;
+	color: aliceblue;
 }
 
 .content h2 {
