@@ -21,7 +21,7 @@ export default function IndexPage({ data }) {
 					<p>Improving lives with technology</p>
 
 					<Link to="content" smooth={true}>
-						<Button>Let's go</Button>
+						<Button size="lg">Let's go</Button>
 					</Link>
 				</div>
 			</div>

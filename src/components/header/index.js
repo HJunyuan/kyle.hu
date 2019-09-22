@@ -3,8 +3,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-import "./header.scss";
-
 export default function Header() {
 	const query = useStaticQuery(graphql`
 		{
@@ -19,7 +17,7 @@ export default function Header() {
 	`);
 
 	return (
-		<Navbar collapseOnSelect expand="lg" variant="dark" sticky="top">
+		<Navbar collapseOnSelect expand="lg" variant="dark" bg="primary" sticky="top" style={{ marginBottom: "2rem" }}>
 			<Container>
 				<Navbar.Brand href="/">
 					<Img fixed={query.img.childImageSharp.fixed} title="Home" alt="Kyle's Logo" />
