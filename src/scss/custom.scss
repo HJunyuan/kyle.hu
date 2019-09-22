@@ -1,2 +1,6 @@
-@import "./_variables.scss";
+@import "./variables.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+.nav-link {
+	color: black;
+}
