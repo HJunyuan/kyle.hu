@@ -17,7 +17,7 @@ export default function Header() {
 	`);
 
 	return (
-		<Navbar collapseOnSelect expand="lg" bg="white" sticky="top" style={{ marginBottom: "2rem" }}>
+		<Navbar collapseOnSelect expand="lg" bg="white" sticky="top">
 			<Container>
 				<Navbar.Brand href="/">
 					<Img fixed={query.img.childImageSharp.fixed} title="Home" alt="Kyle's Logo" />
