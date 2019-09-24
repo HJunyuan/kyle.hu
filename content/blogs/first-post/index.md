@@ -2,7 +2,7 @@
 path: "/blog/first-post"
 date: "2019-04-19"
 coverImg: "./adam-robot2.jpg"
-title: "My first blog post"
+title: "Do Singaporeans actually care if our personal data gets stolen online?"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sodales nunc. Ut consectetur nulla ante. Nullam sed blandit tortor. Integer tempus feugiat ligula sed fringilla. Praesent eu felis ut mauris porta fringilla sed sed elit."
 published: true
 category: ["blog"]

@@ -26,9 +26,9 @@ export default function Card({ image, date, title, description, path }) {
 				<Img className={styles.cardImage} fluid={image} alt={title} />
 
 				<div className={styles.cardDescription}>
-					{date && <span>{date}</span>}
+					{date && <p>{date}</p>}
 					<h3>{truncate(title, 8)}</h3>
-					<p>{truncate(description, 23)}</p>
+					<p>{truncate(description, 50)}</p>
 				</div>
 			</div>
 		</Link>

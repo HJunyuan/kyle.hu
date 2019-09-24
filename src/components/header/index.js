@@ -20,7 +20,7 @@ export default function Header() {
 		<Navbar collapseOnSelect expand="lg" bg="white" sticky="top" style={{ marginBottom: "2rem" }}>
 			<Container>
 				<Navbar.Brand href="/">
-					K{/* <Img fixed={query.img.childImageSharp.fixed} title="Home" alt="Kyle's Logo" /> */}
+					<Img fixed={query.img.childImageSharp.fixed} title="Home" alt="Kyle's Logo" />
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
