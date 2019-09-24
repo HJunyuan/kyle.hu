@@ -1,11 +1,11 @@
 $font-family-sans-serif: "Source Sans Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
 	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$headings-font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$headings-font-family: Raleway, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 $yellow: #f3de8a;
-$primary: #2b3949;
+$primary: #303030;
 $green: #73dd8d;
 $white: #fff;
-$body-color: #03070a;
+$body-color: $primary;
 $enable-rounded: false;
 $navbar-toggler-padding-y: 0;
 $navbar-toggler-padding-x: 0;
@@ -13,3 +13,11 @@ $navbar-dark-toggler-border-color: rgba(255, 255, 255, 0);
 $navbar-light-toggler-border-color: rgba(255, 255, 255, 0);
 $secondary: #7798ab;
 $navbar-toggler-font-size: 1.5rem;
+$headings-font-weight: 700;
+$headings-color: $primary;
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1300px
+);

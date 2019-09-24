@@ -15,6 +15,7 @@ export default function CardScroll({ data }) {
 			cards.push(
 				<Card
 					image={fluid}
+					date={frontmatter.date}
 					title={frontmatter.title}
 					description={frontmatter.description}
 					path={frontmatter.path}

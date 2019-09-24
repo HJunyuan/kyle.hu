@@ -1,61 +1,42 @@
 .cardContainer {
 	display: flex;
 	flex-direction: column;
-	width: 300px;
-	height: 350px;
-	margin: 20px 5px;
-	background-color: white;
+	width: 400px;
+	height: 445px;
+	margin: 20px 0px;
+	background-color: #fafafa;
 	/* border-radius: 0.8em; */
-	box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 10px 0px rgba(112, 112, 112, 0.5);
 	overflow: hidden;
 	/* flex: 0 0 auto; */
 }
 
 .cardContainer:hover {
-	box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 5px 10px 0px rgba(112, 112, 112, 0.7);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
 	.cardContainer {
-		font-size: 1.2em;
 		width: 90vw;
-		height: 90vw;
 		/* margin: 20px; */
 	}
 }
 
 .cardImage {
 	order: 0;
-	height: 150px !important;
+	height: 255px;
 	object-fit: cover;
-}
-
-.cardImage img {
-	height: 150px;
-	margin: 0;
 }
 
 .cardDescription {
 	order: 1;
-	margin: auto 30px;
+	margin: auto 20px;
 	/* height: 100%; */
 	/* max-height: 150px; */
 }
 
-.cardDescription h3 {
-	font-size: 1.2em;
-	margin: 0;
-}
-
-.cardDescription hr {
-	max-width: 40px;
-	margin: 0.5em 0 0.5em 0;
-	border-width: 3px;
-	border-color: #2b3949;
-}
-
 .cardDescription p {
-	font-size: 0.85em;
+	/* font-size: 1rem; */
 	margin: 0;
 	line-height: 1.2em;
 }

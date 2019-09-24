@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 
 import styles from "./card.module.css";
 
-export default function Card({ image, title, description, path }) {
+export default function Card({ image, date, title, description, path }) {
 	const query = useStaticQuery(graphql`
 		query {
 			placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
@@ -26,8 +26,8 @@ export default function Card({ image, title, description, path }) {
 				<Img className={styles.cardImage} fluid={image} alt={title} />
 
 				<div className={styles.cardDescription}>
+					{date && <span>{date}</span>}
 					<h3>{truncate(title, 8)}</h3>
-					<hr />
 					<p>{truncate(description, 23)}</p>
 				</div>
 			</div>
