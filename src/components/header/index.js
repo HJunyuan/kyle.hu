@@ -15,13 +15,12 @@ export default function Header() {
 	// 		}
 	// 	}
 	// `);
+	// <Img fixed={query.img.childImageSharp.fixed} title="Home" alt="Kyle's Logo" />
 
 	return (
-		<Navbar collapseOnSelect expand="lg" bg="white" sticky="top">
+		<Navbar collapseOnSelect expand="md" bg="white" sticky="top">
 			<Container>
-				<Navbar.Brand href="/">
-					K{/* <Img fixed={query.img.childImageSharp.fixed} title="Home" alt="Kyle's Logo" /> */}
-				</Navbar.Brand>
+				<Navbar.Brand href="/">K</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ml-auto">

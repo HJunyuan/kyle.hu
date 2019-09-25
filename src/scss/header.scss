@@ -1,0 +1,15 @@
+a.navbar-brand,
+a.nav-link {
+	font-family: $headings-font-family;
+	font-weight: 700;
+	font-size: $h5-font-size;
+	text-transform: uppercase;
+}
+
+a.nav-link:not(:last-child) {
+	@extend .pr-5;
+}
+
+nav.navbar {
+	box-shadow: 0px 1px 10px 0px rgba($primary, 0.2);
+}

@@ -1,8 +1,8 @@
 .cardContainer {
 	display: flex;
 	flex-direction: column;
-	width: 400px;
-	height: 445px;
+	width: 350px;
+	height: 400px;
 	margin: 20px 0px;
 	background-color: #fafafa;
 	/* border-radius: 0.8em; */
@@ -24,14 +24,14 @@
 
 .cardImage {
 	order: 0;
-	height: 255px;
+	height: 200px;
+	width: 100%;
 	object-fit: cover;
 }
 
 .cardDescription {
 	order: 1;
 	margin: auto 20px;
-	height: 150px;
 }
 
 .cardDescription h3 {

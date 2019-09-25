@@ -34,13 +34,15 @@ export default function IndexPage({ data }) {
 
 	return (
 		<React.Fragment>
-			<SEO title="Home" />
+			<SEO title="Kyle Huang Junyuan" />
 			<Layout>
 				<Row className="align-items-center" style={{ height: "95vh" }}>
-					<Col className="col-lg-8 col-xl-6 pb-5">
-						<h1>Kyle Huang Junyuan</h1>
-						<p>Improving lives with technology</p>
-						<p>
+					<Col className="mb-5 landing">
+						<h1 className="m-0 name">Kyle Huang Junyuan</h1>
+						<p style={{ fontSize: "20px", fontWeight: "400" }} className="mb-4">
+							Improving lives with technology
+						</p>
+						<p style={{ maxWidth: "450px", color: "#4F4F4F" }} className="mb-4">
 							Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal to
 							understand how certain technology works in the hopes that someday, I could actually make dreams into
 							reality. I genuinely crave to address challenges with the use of technology to improve lives by making a
