@@ -1,12 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
 import Card from "../components/card";
 import CardScroll from "../components/cardScroll";
-import Styles from "./index.module.css";
 
 export default function IndexPage({ data }) {
 	const generateCards = data => {
@@ -36,19 +35,20 @@ export default function IndexPage({ data }) {
 	return (
 		<React.Fragment>
 			<SEO title="Home" />
-			<Layout className={Styles.content}>
-				<section style={{ height: "100vh" }}>
-					<h1>Kyle Huang Junyuan</h1>
-					<p>Improving lives with technology</p>
-					<p>
-						Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal to
-						understand how certain technology works in the hopes that someday, I could actually make the dreams of mine
-						and others into reality. I genuinely crave to address challenges with the use of technology to improve lives
-						by making a positive difference...
-					</p>
-					<Button>Read more</Button>
-				</section>
-
+			<Layout>
+				<Row className="align-items-center" style={{ height: "95vh" }}>
+					<Col className="col-lg-8 col-xl-6 pb-5">
+						<h1>Kyle Huang Junyuan</h1>
+						<p>Improving lives with technology</p>
+						<p>
+							Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal to
+							understand how certain technology works in the hopes that someday, I could actually make dreams into
+							reality. I genuinely crave to address challenges with the use of technology to improve lives by making a
+							positive difference...
+						</p>
+						<Button>Read more</Button>
+					</Col>
+				</Row>
 				<section>
 					<h2>Projects</h2>
 					<CardScroll>{generateCards(data.projects)}</CardScroll>

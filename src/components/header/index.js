@@ -1,26 +1,26 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+// import { graphql, useStaticQuery } from "gatsby";
+// import Img from "gatsby-image";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
 export default function Header() {
-	const query = useStaticQuery(graphql`
-		{
-			img: file(relativePath: { eq: "site-icon.png" }) {
-				childImageSharp {
-					fixed(width: 50) {
-						...GatsbyImageSharpFixed
-					}
-				}
-			}
-		}
-	`);
+	// const query = useStaticQuery(graphql`
+	// 	{
+	// 		img: file(relativePath: { eq: "site-icon.png" }) {
+	// 			childImageSharp {
+	// 				fixed(width: 50) {
+	// 					...GatsbyImageSharpFixed
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// `);
 
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="white" sticky="top">
 			<Container>
 				<Navbar.Brand href="/">
-					<Img fixed={query.img.childImageSharp.fixed} title="Home" alt="Kyle's Logo" />
+					K{/* <Img fixed={query.img.childImageSharp.fixed} title="Home" alt="Kyle's Logo" /> */}
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
