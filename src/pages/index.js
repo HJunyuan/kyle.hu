@@ -1,14 +1,13 @@
 import React from "react";
-import { graphql } from "gatsby";
-import { Button, Col, Row } from "react-bootstrap";
+import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
+import { Button, Col, Row, Card, CardDeck } from "react-bootstrap";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
-import Card from "../components/card";
-import CardScroll from "../components/cardScroll";
 
 export default function IndexPage({ data }) {
-	const generateCards = data => {
+	const projectCards = data => {
 		let cards = [];
 
 		data.edges.forEach((element, i) => {
@@ -16,18 +15,129 @@ export default function IndexPage({ data }) {
 			let { fluid } = frontmatter.coverImg.childImageSharp;
 
 			cards.push(
-				<Card
-					image={fluid}
-					date={frontmatter.date}
-					title={frontmatter.title}
-					description={frontmatter.description}
-					path={frontmatter.path}
-					key={i}
-				/>
+				<React.Fragment key={i}>
+					<Card>
+						<Link to={frontmatter.path}>
+							<Img
+								className="card-img"
+								style={{ height: "200px" }}
+								fluid={fluid}
+								alt={frontmatter.title}
+								draggable={false}
+							/>
+							<Card.Body>
+								<Card.Text as="h5">{frontmatter.title}</Card.Text>
+							</Card.Body>
+						</Link>
+					</Card>
+
+					<Card>
+						<Link to={frontmatter.path}>
+							<Img
+								className="card-img"
+								style={{ height: "200px" }}
+								fluid={fluid}
+								alt={frontmatter.title}
+								draggable={false}
+							/>
+							<Card.Body>
+								<Card.Text as="h5">{frontmatter.title}</Card.Text>
+							</Card.Body>
+						</Link>
+					</Card>
+				</React.Fragment>
 			);
 		});
 
-		for (let i = 5; i < 9; i++) cards.push(<Card key={i} />);
+		return cards;
+	};
+
+	const blogCards = data => {
+		let cards = [];
+
+		data.edges.forEach((element, i) => {
+			let { frontmatter } = element.node;
+			let { fluid } = frontmatter.coverImg.childImageSharp;
+
+			let excerpt = frontmatter.excerpt ? frontmatter.excerpt.slice(0, 150) + "..." : element.node.excerpt;
+
+			cards.push(
+				<React.Fragment key={i}>
+					<Card>
+						<Link to={frontmatter.path}>
+							<Img
+								className="card-img-top"
+								style={{ height: "190px" }}
+								fluid={fluid}
+								alt={frontmatter.title}
+								draggable={false}
+							/>
+							<Card.Body>
+								<Card.Subtitle className="mb-2 text-muted" as="p">
+									{frontmatter.date}
+								</Card.Subtitle>
+								<Card.Title>{frontmatter.title}</Card.Title>
+								<Card.Text>{excerpt}</Card.Text>
+							</Card.Body>
+						</Link>
+					</Card>
+					<Card>
+						<Link to={frontmatter.path}>
+							<Img
+								className="card-img-top"
+								style={{ height: "190px" }}
+								fluid={fluid}
+								alt={frontmatter.title}
+								draggable={false}
+							/>
+							<Card.Body>
+								<Card.Subtitle className="mb-2 text-muted" as="p">
+									{frontmatter.date}
+								</Card.Subtitle>
+								<Card.Title>{frontmatter.title}</Card.Title>
+								<Card.Text>{excerpt}</Card.Text>
+							</Card.Body>
+						</Link>
+					</Card>
+					<Card>
+						<Link to={frontmatter.path}>
+							<Img
+								className="card-img-top"
+								style={{ height: "190px" }}
+								fluid={fluid}
+								alt={frontmatter.title}
+								draggable={false}
+							/>
+							<Card.Body>
+								<Card.Subtitle className="mb-2 text-muted" as="p">
+									{frontmatter.date}
+								</Card.Subtitle>
+								<Card.Title>{frontmatter.title}</Card.Title>
+								<Card.Text>{excerpt}</Card.Text>
+							</Card.Body>
+						</Link>
+					</Card>
+					<Card>
+						<Link to={frontmatter.path}>
+							<Img
+								className="card-img-top"
+								style={{ height: "190px" }}
+								fluid={fluid}
+								alt={frontmatter.title}
+								draggable={false}
+							/>
+							<Card.Body>
+								<Card.Subtitle className="mb-2 text-muted" as="p">
+									{frontmatter.date}
+								</Card.Subtitle>
+								<Card.Title>{frontmatter.title}</Card.Title>
+								<Card.Text>{excerpt}</Card.Text>
+							</Card.Body>
+						</Link>
+					</Card>
+				</React.Fragment>
+			);
+		});
 
 		return cards;
 	};
@@ -36,7 +146,7 @@ export default function IndexPage({ data }) {
 		<React.Fragment>
 			<SEO title="Kyle Huang Junyuan" />
 			<Layout>
-				<Row className="align-items-center" style={{ height: "95vh" }}>
+				<Row className="align-items-center" style={{ height: "95vh" }} as="section">
 					<Col className="mb-5">
 						<h1 className="m-0 name">Kyle Huang Junyuan</h1>
 						<p className="m-0 tagline">Improving lives with technology</p>
@@ -49,20 +159,20 @@ export default function IndexPage({ data }) {
 						<Button>Read more</Button>
 					</Col>
 				</Row>
-				<Row className="">
+				<Row as="section">
 					<Col className="mb-5">
 						<h2 className="mb-0">Projects</h2>
 						<p className="mb-4 tagline">A glimpse of my adventures</p>
-						<CardScroll>{generateCards(data.projects)}</CardScroll>
+						<CardDeck className="mb-4">{projectCards(data.projects)}</CardDeck>
 						<Button>View all</Button>
 					</Col>
 				</Row>
 
-				<Row className="">
+				<Row as="section">
 					<Col className="my-5">
 						<h2 className="m-0">Blog</h2>
 						<p className="mb-4 tagline">Recent posts</p>
-						<CardScroll>{generateCards(data.blogs)}</CardScroll>
+						<CardDeck className="mb-4">{blogCards(data.blogs)}</CardDeck>
 						<Button>View all</Button>
 					</Col>
 				</Row>
@@ -82,12 +192,11 @@ export const query = graphql`
 				node {
 					frontmatter {
 						title
-						description
 						path
 						published
 						coverImg {
 							childImageSharp {
-								fluid(maxWidth: 300) {
+								fluid(maxWidth: 350) {
 									...GatsbyImageSharpFluid
 								}
 							}
@@ -106,17 +215,18 @@ export const query = graphql`
 					frontmatter {
 						date(formatString: "DD MMMM YYYY")
 						title
-						description
+						excerpt
 						path
 						published
 						coverImg {
 							childImageSharp {
-								fluid(maxWidth: 300) {
+								fluid(maxWidth: 350) {
 									...GatsbyImageSharpFluid
 								}
 							}
 						}
 					}
+					excerpt(format: PLAIN, pruneLength: 150, truncate: true)
 				}
 			}
 		}

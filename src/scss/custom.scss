@@ -14,3 +14,11 @@ p.tagline {
 	font-weight: 400;
 	letter-spacing: 0.05em;
 }
+
+.card:hover {
+	background-color: darken($gray-100, 0.2);
+}
+
+.card a:hover {
+	text-decoration: none;
+}
