@@ -37,12 +37,10 @@ export default function IndexPage({ data }) {
 			<SEO title="Kyle Huang Junyuan" />
 			<Layout>
 				<Row className="align-items-center" style={{ height: "95vh" }}>
-					<Col className="mb-5 landing">
+					<Col className="mb-5">
 						<h1 className="m-0 name">Kyle Huang Junyuan</h1>
-						<p style={{ fontSize: "20px", fontWeight: "400" }} className="mb-4">
-							Improving lives with technology
-						</p>
-						<p style={{ maxWidth: "450px", color: "#4F4F4F" }} className="mb-4">
+						<p className="m-0 tagline">Improving lives with technology</p>
+						<p style={{ maxWidth: "450px", color: "#4F4F4F" }} className="my-4">
 							Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal to
 							understand how certain technology works in the hopes that someday, I could actually make dreams into
 							reality. I genuinely crave to address challenges with the use of technology to improve lives by making a
@@ -51,17 +49,23 @@ export default function IndexPage({ data }) {
 						<Button>Read more</Button>
 					</Col>
 				</Row>
-				<section>
-					<h2>Projects</h2>
-					<CardScroll>{generateCards(data.projects)}</CardScroll>
-					<Button>View all</Button>
-				</section>
+				<Row className="">
+					<Col className="mb-5">
+						<h2 className="mb-0">Projects</h2>
+						<p className="mb-4 tagline">A glimpse of my adventures</p>
+						<CardScroll>{generateCards(data.projects)}</CardScroll>
+						<Button>View all</Button>
+					</Col>
+				</Row>
 
-				<section>
-					<h2>Blog</h2>
-					<CardScroll>{generateCards(data.blogs)}</CardScroll>
-					<Button>View all</Button>
-				</section>
+				<Row className="">
+					<Col className="my-5">
+						<h2 className="m-0">Blog</h2>
+						<p className="mb-4 tagline">Recent posts</p>
+						<CardScroll>{generateCards(data.blogs)}</CardScroll>
+						<Button>View all</Button>
+					</Col>
+				</Row>
 			</Layout>
 		</React.Fragment>
 	);

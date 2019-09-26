@@ -1,9 +1,18 @@
-a.navbar-brand,
-a.nav-link {
+.navbar a.navbar-brand,
+.navbar .navbar-nav a.nav-link {
 	font-family: $headings-font-family;
 	font-weight: 700;
 	font-size: $h5-font-size;
+	color: rgba($primary, 0.75);
 	text-transform: uppercase;
+}
+
+.navbar a.navbar-brand {
+	color: $primary;
+}
+
+.navbar .navbar-nav a.nav-link:hover {
+	color: $primary;
 }
 
 a.nav-link:not(:last-child) {
