@@ -44,7 +44,7 @@ module.exports = {
 			resolve: `gatsby-plugin-prefetch-google-fonts`,
 			options: {
 				fonts: [
-					{ family: "Raleway", variants: ["400", "500", "600", "700"] },
+					{ family: "Raleway", variants: ["300", "400", "500", "600", "700"] },
 					{ family: "Source Sans Pro", variants: ["300", "400", "600", "700"] }
 				]
 			}

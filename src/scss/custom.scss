@@ -15,8 +15,13 @@ p.tagline {
 	letter-spacing: 0.05em;
 }
 
+.card {
+	border: none;
+	background-color: $gray-100;
+}
+
 .card:hover {
-	background-color: darken($gray-100, 0.2);
+	background-color: darken($gray-200, 0.7);
 }
 
 .card a:hover {

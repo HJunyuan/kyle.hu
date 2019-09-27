@@ -1,10 +1,9 @@
 .navbar a.navbar-brand,
 .navbar .navbar-nav a.nav-link {
 	font-family: $headings-font-family;
-	font-weight: 700;
+	font-weight: 500;
 	font-size: $h5-font-size;
 	color: rgba($primary, 0.75);
-	text-transform: uppercase;
 }
 
 .navbar a.navbar-brand {
