@@ -16,21 +16,7 @@ export default function IndexPage({ data }) {
 
 			cards.push(
 				<React.Fragment key={i}>
-					<Card>
-						<Link to={frontmatter.path}>
-							<Img
-								className="card-img"
-								style={{ height: "200px" }}
-								fluid={fluid}
-								alt={frontmatter.title}
-								draggable={false}
-							/>
-							<Card.Body>
-								<Card.Text as="h5">{frontmatter.title}</Card.Text>
-							</Card.Body>
-						</Link>
-					</Card>
-
+					{(i + 1) % 3 === 0 ? <div className="w-100 .d-xs-none .d-sm-block d-md-block d-lg-none my-2" /> : null}
 					<Card>
 						<Link to={frontmatter.path}>
 							<Img
@@ -63,60 +49,7 @@ export default function IndexPage({ data }) {
 
 			cards.push(
 				<React.Fragment key={i}>
-					<Card>
-						<Link to={frontmatter.path}>
-							<Img
-								className="card-img-top"
-								style={{ height: "190px" }}
-								fluid={fluid}
-								alt={frontmatter.title}
-								draggable={false}
-							/>
-							<Card.Body>
-								<Card.Subtitle className="mb-2 text-muted" as="p">
-									{frontmatter.date}
-								</Card.Subtitle>
-								<Card.Title>{frontmatter.title}</Card.Title>
-								<Card.Text>{excerpt}</Card.Text>
-							</Card.Body>
-						</Link>
-					</Card>
-					<Card>
-						<Link to={frontmatter.path}>
-							<Img
-								className="card-img-top"
-								style={{ height: "190px" }}
-								fluid={fluid}
-								alt={frontmatter.title}
-								draggable={false}
-							/>
-							<Card.Body>
-								<Card.Subtitle className="mb-2 text-muted" as="p">
-									{frontmatter.date}
-								</Card.Subtitle>
-								<Card.Title>{frontmatter.title}</Card.Title>
-								<Card.Text>{excerpt}</Card.Text>
-							</Card.Body>
-						</Link>
-					</Card>
-					<Card>
-						<Link to={frontmatter.path}>
-							<Img
-								className="card-img-top"
-								style={{ height: "190px" }}
-								fluid={fluid}
-								alt={frontmatter.title}
-								draggable={false}
-							/>
-							<Card.Body>
-								<Card.Subtitle className="mb-2 text-muted" as="p">
-									{frontmatter.date}
-								</Card.Subtitle>
-								<Card.Title>{frontmatter.title}</Card.Title>
-								<Card.Text>{excerpt}</Card.Text>
-							</Card.Body>
-						</Link>
-					</Card>
+					{(i + 1) % 3 === 0 ? <div className="w-100 .d-xs-none .d-sm-block d-md-block d-lg-none my-2" /> : null}
 					<Card>
 						<Link to={frontmatter.path}>
 							<Img
