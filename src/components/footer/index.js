@@ -44,16 +44,16 @@ export default function() {
 							<i className="fab fa-flickr"></i>
 						</a>
 						<div className="w-100 my-4"></div>
-						<Link className="footer-link" to="#">
+						<Link className="footer-link" to="/">
 							Home
 						</Link>
-						<Link className="footer-link" to="#">
+						<Link className="footer-link" to="/about">
 							About
 						</Link>
-						<Link className="footer-link" to="#">
+						<Link className="footer-link" to="/projects">
 							Projects
 						</Link>
-						<Link className="footer-link" to="#">
+						<Link className="footer-link" to="/blog">
 							Blog
 						</Link>
 					</Col>

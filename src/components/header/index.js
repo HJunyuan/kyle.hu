@@ -20,17 +20,19 @@ export default function Header() {
 	return (
 		<Navbar collapseOnSelect expand="md" bg="white" sticky="top">
 			<Container>
-				<Navbar.Brand href="/">K</Navbar.Brand>
+				<Link className="navbar-brand" to="/">
+					K
+				</Link>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ml-auto">
-						<Link className="nav-link" href="#">
+						<Link className="nav-link" to="/about">
 							About
 						</Link>
-						<Link className="nav-link" href="#">
+						<Link className="nav-link" to="/projects">
 							Projects
 						</Link>
-						<Link className="nav-link" href="#">
+						<Link className="nav-link" to="/blog">
 							Blog
 						</Link>
 					</Nav>

@@ -97,7 +97,7 @@ export default function IndexPage({ data }) {
 						<h2 className="mb-0">Projects</h2>
 						<div className="d-flex align-items-end mb-2">
 							<p className="flex-grow-1 tagline">A glimpse of my adventures</p>
-							<Link className="tagline-btn d-none d-sm-block" to="#">
+							<Link className="tagline-btn d-none d-sm-block" to="/projects">
 								View all
 							</Link>
 						</div>
@@ -112,10 +112,10 @@ export default function IndexPage({ data }) {
 						<h2 className="m-0">Blog</h2>
 						<div className="d-flex align-items-end mb-2">
 							<p className="flex-grow-1 tagline">Recent posts</p>
-							<Link className="tagline-btn d-none d-sm-block" to="#">
+							<Link className="tagline-btn d-none d-sm-block" to="/blog">
 								View all
 							</Link>
-						</div>{" "}
+						</div>
 						<CardDeck className="mb-4">{blogCards(data.blogs)}</CardDeck>
 						<center className="d-block d-sm-none">
 							<Button>View all blog posts</Button>
