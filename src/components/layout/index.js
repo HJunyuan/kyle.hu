@@ -1,8 +1,3 @@
-/**
- * Layout component. Inlcudes
- *
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import { Container } from "react-bootstrap";
@@ -16,7 +11,7 @@ export default function Layout({ children, noNav }) {
 	return (
 		<React.Fragment>
 			{noNav ? null : <Header />}
-			<Container>{children}</Container>
+			<Container as="main">{children}</Container>
 			<Footer />
 		</React.Fragment>
 	);

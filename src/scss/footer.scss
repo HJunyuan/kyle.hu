@@ -1,0 +1,27 @@
+footer {
+	@extend .py-5, .mt-5;
+
+	width: 100%;
+	background-color: $gray-200;
+
+	& div {
+		text-align: center;
+	}
+
+	& a.footer-link {
+		font-family: $headings-font-family;
+		font-weight: 500;
+		font-size: $h5-font-size;
+
+		&:not(:last-child) {
+			@extend .mr-4;
+		}
+	}
+}
+
+footer i.fab {
+	@extend .fa-fw;
+	// 	@extend .fa-3x;
+
+	font-size: 2rem;
+}

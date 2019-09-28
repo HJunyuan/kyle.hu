@@ -1,5 +1,5 @@
 import React from "react";
-// import { graphql, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 // import Img from "gatsby-image";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
@@ -24,9 +24,15 @@ export default function Header() {
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ml-auto">
-						<Nav.Link href="#about">About</Nav.Link>
-						<Nav.Link href="#projects">Projects</Nav.Link>
-						<Nav.Link href="#blog">Blog</Nav.Link>
+						<Link className="nav-link" href="#">
+							About
+						</Link>
+						<Link className="nav-link" href="#">
+							Projects
+						</Link>
+						<Link className="nav-link" href="#">
+							Blog
+						</Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
