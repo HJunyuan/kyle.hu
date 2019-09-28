@@ -16,7 +16,7 @@ export default function IndexPage({ data }) {
 
 			cards.push(
 				<React.Fragment key={i}>
-					{(i + 1) % 3 === 0 ? <div className="w-100 .d-xs-none .d-sm-block d-md-block d-lg-none my-2" /> : null}
+					{(i + 1) % 3 === 0 ? <div className="w-100 d-xs-none d-sm-block d-md-block d-lg-none my-2" /> : null}
 					<Card>
 						<Link to={frontmatter.path}>
 							<Img
@@ -49,7 +49,7 @@ export default function IndexPage({ data }) {
 
 			cards.push(
 				<React.Fragment key={i}>
-					{(i + 1) % 3 === 0 ? <div className="w-100 .d-xs-none .d-sm-block d-md-block d-lg-none my-2" /> : null}
+					{(i + 1) % 3 === 0 ? <div className="w-100 d-xs-none d-sm-block d-md-block d-lg-none my-2" /> : null}
 					<Card>
 						<Link to={frontmatter.path}>
 							<Img
@@ -79,7 +79,7 @@ export default function IndexPage({ data }) {
 		<React.Fragment>
 			<SEO title="Kyle Huang Junyuan" />
 			<Layout>
-				<Row className="align-items-center" style={{ height: "95vh" }} as="section">
+				<Row className="align-items-center" style={{ height: "95vh" }}>
 					<Col className="mb-5">
 						<h1 className="m-0 name">Kyle Huang Junyuan</h1>
 						<p className="m-0 tagline">Improving lives with technology</p>
@@ -89,24 +89,37 @@ export default function IndexPage({ data }) {
 							reality. I genuinely crave to address challenges with the use of technology to improve lives by making a
 							positive difference...
 						</p>
-						<Button>Read more</Button>
+						<Button>More about Kyle</Button>
 					</Col>
 				</Row>
-				<Row as="section">
-					<Col className="mb-5">
+				<Row className="justify">
+					<Col className="my-5">
 						<h2 className="mb-0">Projects</h2>
-						<p className="mb-4 tagline">A glimpse of my adventures</p>
+						<div className="d-flex align-items-end mb-2">
+							<p className="flex-grow-1 tagline">A glimpse of my adventures</p>
+							<a className="tagline-btn d-none d-sm-block" href="/">
+								View all
+							</a>
+						</div>
 						<CardDeck className="mb-4">{projectCards(data.projects)}</CardDeck>
-						<Button>View all</Button>
+						<center className="d-block d-sm-none">
+							<Button>View all projects</Button>
+						</center>
 					</Col>
 				</Row>
-
-				<Row as="section">
+				<Row>
 					<Col className="my-5">
 						<h2 className="m-0">Blog</h2>
-						<p className="mb-4 tagline">Recent posts</p>
+						<div className="d-flex align-items-end mb-2">
+							<p className="flex-grow-1 tagline">Recent posts</p>
+							<a className="tagline-btn d-none d-sm-block" href="/">
+								View all
+							</a>
+						</div>{" "}
 						<CardDeck className="mb-4">{blogCards(data.blogs)}</CardDeck>
-						<Button>View all</Button>
+						<center className="d-block d-sm-none">
+							<Button>View all blog posts</Button>
+						</center>
 					</Col>
 				</Row>
 			</Layout>

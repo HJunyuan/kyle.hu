@@ -1,7 +1,9 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-export default function Footer() {
+import { Container } from "react-bootstrap";
+
+export default function() {
 	const query = useStaticQuery(graphql`
 		{
 			site {
@@ -13,10 +15,12 @@ export default function Footer() {
 	`);
 
 	return (
-		<footer>
-			© {new Date().getFullYear()}, {query.site.siteMetadata.title}
-			<br />
-			All rights reserved.
+		<footer className="footer">
+			<Container>
+				© {new Date().getFullYear()}, {query.site.siteMetadata.title}
+				<br />
+				All rights reserved.
+			</Container>
 		</footer>
 	);
 }
