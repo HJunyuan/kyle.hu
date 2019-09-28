@@ -6,12 +6,6 @@
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 
-@media screen and (max-width: 420px) {
-	h1.name {
-		font-size: $h2-font-size;
-	}
-}
-
 p.tagline {
 	font-family: $headings-font-family;
 	font-size: 20px;
@@ -46,5 +40,25 @@ a.tagline-btn {
 
 	a:hover {
 		text-decoration: none;
+	}
+}
+
+@media (max-width: 575.98px) {
+	h1.name {
+		font-size: $h2-font-size;
+	}
+
+	.card {
+		flex: 0 0 70vw;
+		margin: 0 $grid-gutter-width/2;
+	}
+
+	.card-deck {
+		flex-flow: row nowrap;
+		overflow-x: auto;
+
+		// -webkit-overflow-scrolling: touch;
+		margin-right: -$grid-gutter-width/2;
+		margin-left: -$grid-gutter-width/2;
 	}
 }

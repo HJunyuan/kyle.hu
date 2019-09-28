@@ -16,7 +16,7 @@ export default function IndexPage({ data }) {
 
 			cards.push(
 				<React.Fragment key={i}>
-					{(i + 1) % 3 === 0 ? <div className="w-100 d-xs-none d-sm-block d-md-block d-lg-none my-2" /> : null}
+					{(i + 1) % 3 === 0 ? <div className="w-100 d-none d-sm-block d-md-block d-lg-none d-xl-none my-2" /> : null}
 					<Card>
 						<Link to={frontmatter.path}>
 							<Img
@@ -49,7 +49,7 @@ export default function IndexPage({ data }) {
 
 			cards.push(
 				<React.Fragment key={i}>
-					{(i + 1) % 3 === 0 ? <div className="w-100 d-xs-none d-sm-block d-md-block d-lg-none my-2" /> : null}
+					{(i + 1) % 3 === 0 ? <div className="w-100 d-none d-sm-block d-md-block d-lg-none d-xl-none my-2" /> : null}
 					<Card>
 						<Link to={frontmatter.path}>
 							<Img
