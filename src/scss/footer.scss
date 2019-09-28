@@ -1,7 +1,11 @@
 footer {
-	@extend .py-5, .mt-5;
+	@extend .p-5;
+
+	position: absolute;
+	bottom: 0;
 
 	width: 100%;
+	height: 250px;
 	background-color: $gray-200;
 
 	// & div {
@@ -20,7 +24,7 @@ footer {
 }
 
 footer i.fab {
-	@extend .fa-fw;
+	@extend .fa-fw, .mx-1;
 	// 	@extend .fa-3x;
 
 	font-size: 2rem;

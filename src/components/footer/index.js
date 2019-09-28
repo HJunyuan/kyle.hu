@@ -18,13 +18,7 @@ export default function() {
 		<footer>
 			<Container>
 				<Row className="my-2">
-					<Col>
-						<a href="https://github.com/HJunyuan" target="_blank" rel="noopener noreferrer">
-							<i className="fab fa-github-square"></i>
-						</a>
-					</Col>
-					<div className="w-100 my-2"></div>
-					<Col>
+					<Col className="col-auto">
 						<a href="https://www.facebook.com/HJunyuan" target="_blank" rel="noopener noreferrer">
 							<i className="fab fa-facebook-f"></i>
 						</a>
@@ -43,7 +37,16 @@ export default function() {
 						<a href="https://www.flickr.com/photos/kylehjunyuan/albums" target="_blank" rel="noopener noreferrer">
 							<i className="fab fa-flickr"></i>
 						</a>
-						<div className="w-100 my-4"></div>
+					</Col>
+					<Col className="col-auto ml-auto">
+						<a href="https://github.com/HJunyuan" target="_blank" rel="noopener noreferrer">
+							<i className="fab fa-github"></i>
+						</a>
+					</Col>
+
+					<div className="w-100 my-2"></div>
+
+					<Col>
 						<Link className="footer-link" to="/">
 							Home
 						</Link>
@@ -58,7 +61,7 @@ export default function() {
 						</Link>
 					</Col>
 				</Row>
-				<Row className="my-4">
+				<Row className="my-3">
 					<Col className="text-muted">
 						© {new Date().getFullYear()}, {query.site.siteMetadata.title}
 						<br />
