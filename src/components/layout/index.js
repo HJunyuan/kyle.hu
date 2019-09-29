@@ -7,12 +7,12 @@ import Footer from "../footer";
 
 import "../../scss/custom.scss";
 
-export default function Layout({ children, noNav }) {
+export default function Layout({ children, noNav, noFooter }) {
 	return (
 		<React.Fragment>
 			{noNav ? null : <Header />}
 			<Container as="main">{children}</Container>
-			<Footer />
+			{noFooter ? null : <Footer />}
 		</React.Fragment>
 	);
 }

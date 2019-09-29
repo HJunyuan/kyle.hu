@@ -77,13 +77,16 @@ export default function IndexPage({ data }) {
 
 	return (
 		<React.Fragment>
-			<SEO title="Kyle Huang Junyuan" />
+			<SEO title="Home" />
 			<Layout>
-				<Row className="align-items-center" style={{ height: "95vh" }}>
-					<Col className="mb-5">
+				<Row className="align-items-center" style={{ minHeight: "95vh", backgroundImage: "../images/landing.png" }}>
+					{/* <Col className="col-12 col-md-4">
+						<Img fluid={data.landingImage.childImageSharp.fluid} className="rounded-circle" />
+					</Col> */}
+					<Col className="col-auto">
 						<h1 className="m-0 name">Kyle Huang Junyuan</h1>
 						<p className="m-0 tagline">Improving lives with technology</p>
-						<p style={{ maxWidth: "450px", color: "#4F4F4F" }} className="my-4">
+						<p style={{ maxWidth: "450px" }} className="my-4">
 							Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal to
 							understand how certain technology works in the hopes that someday, I could actually make dreams into
 							reality. I genuinely crave to address challenges with the use of technology to improve lives by making a
@@ -92,6 +95,7 @@ export default function IndexPage({ data }) {
 						<Button>More about Kyle</Button>
 					</Col>
 				</Row>
+
 				<Row className="justify">
 					<Col className="my-5">
 						<h2 className="mb-0">Projects</h2>
@@ -176,9 +180,9 @@ export const query = graphql`
 				}
 			}
 		}
-		landingImage: file(relativePath: { eq: "landing.jpg" }) {
+		landingImage: file(relativePath: { eq: "landing.png" }) {
 			childImageSharp {
-				fluid(maxWidth: 1200) {
+				fluid(maxWidth: 1920) {
 					...GatsbyImageSharpFluid
 				}
 			}
