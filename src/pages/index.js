@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
-import { Button, Col, Row, Card, CardDeck } from "react-bootstrap";
+import { Button, Col, Row, Card, CardDeck, Container } from "react-bootstrap";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
@@ -78,54 +78,57 @@ export default function IndexPage({ data }) {
 	return (
 		<React.Fragment>
 			<SEO title="Home" />
-			<Layout>
-				<Row className="align-items-center" style={{ minHeight: "95vh", backgroundImage: "../images/landing.png" }}>
-					{/* <Col className="col-12 col-md-4">
-						<Img fluid={data.landingImage.childImageSharp.fluid} className="rounded-circle" />
-					</Col> */}
-					<Col className="col-auto">
-						<h1 className="m-0 name">Kyle Huang Junyuan</h1>
-						<p className="m-0 tagline">Improving lives with technology</p>
-						<p style={{ maxWidth: "450px" }} className="my-4">
-							Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal to
-							understand how certain technology works in the hopes that someday, I could actually make dreams into
-							reality. I genuinely crave to address challenges with the use of technology to improve lives by making a
-							positive difference...
-						</p>
-						<Button>More about Kyle</Button>
-					</Col>
-				</Row>
+			<Layout noContainer>
+				<div className="position-relative" style={{ height: "95vh", minHeight: "550px" }}>
+					<Img fluid={data.landingImage.childImageSharp.fluid} className="w-100 h-100" />
 
-				<Row className="justify">
-					<Col className="my-5">
-						<h2 className="mb-0">Projects</h2>
-						<div className="d-flex align-items-end mb-2">
-							<p className="flex-grow-1 tagline">A glimpse of my adventures</p>
-							<Link className="tagline-btn d-none d-sm-block" to="/projects">
-								View all
-							</Link>
-						</div>
-						<CardDeck className="mb-4">{projectCards(data.projects)}</CardDeck>
-						<center className="d-block d-sm-none">
-							<Button>View all projects</Button>
-						</center>
-					</Col>
-				</Row>
-				<Row>
-					<Col className="my-5">
-						<h2 className="m-0">Blog</h2>
-						<div className="d-flex align-items-end mb-2">
-							<p className="flex-grow-1 tagline">Recent posts</p>
-							<Link className="tagline-btn d-none d-sm-block" to="/blog">
-								View all
-							</Link>
-						</div>
-						<CardDeck className="mb-4">{blogCards(data.blogs)}</CardDeck>
-						<center className="d-block d-sm-none">
-							<Button>View all blog posts</Button>
-						</center>
-					</Col>
-				</Row>
+					<div className="position-absolute w-100 h-100" style={{ top: "23%" }}>
+						<Container>
+							<h1 className="m-0 name">Kyle Huang Junyuan</h1>
+							<p className="m-0 tagline">Improving lives with technology</p>
+							<p style={{ maxWidth: "450px" }} className="my-4">
+								Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal
+								to understand how certain technology works in the hopes that someday, I could actually make dreams into
+								reality. I genuinely crave to address challenges with the use of technology to improve lives by making a
+								positive difference...
+							</p>
+							<Button>More about Kyle</Button>
+						</Container>
+					</div>
+				</div>
+
+				<Container>
+					<Row className="justify">
+						<Col className="my-5">
+							<h2 className="mb-0">Projects</h2>
+							<div className="d-flex align-items-end mb-2">
+								<p className="flex-grow-1 tagline">A glimpse of my adventures</p>
+								<Link className="tagline-btn d-none d-sm-block" to="/projects">
+									View all
+								</Link>
+							</div>
+							<CardDeck className="mb-4">{projectCards(data.projects)}</CardDeck>
+							<center className="d-block d-sm-none">
+								<Button>View all projects</Button>
+							</center>
+						</Col>
+					</Row>
+					<Row>
+						<Col className="my-5">
+							<h2 className="m-0">Blog</h2>
+							<div className="d-flex align-items-end mb-2">
+								<p className="flex-grow-1 tagline">Recent posts</p>
+								<Link className="tagline-btn d-none d-sm-block" to="/blog">
+									View all
+								</Link>
+							</div>
+							<CardDeck className="mb-4">{blogCards(data.blogs)}</CardDeck>
+							<center className="d-block d-sm-none">
+								<Button>View all blog posts</Button>
+							</center>
+						</Col>
+					</Row>
+				</Container>
 			</Layout>
 		</React.Fragment>
 	);

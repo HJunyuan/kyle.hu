@@ -19,7 +19,7 @@ export default function() {
 			<Container>
 				<Row className="align-items-end my-2">
 					<Col className="col-auto mx-auto mx-sm-0">
-						<p>Follow Kyle at</p>
+						<p className="text-center text-sm-left">Follow Kyle at</p>
 
 						<center>
 							<a href="https://www.facebook.com/HJunyuan" target="_blank" rel="noopener noreferrer">
@@ -42,6 +42,7 @@ export default function() {
 							</a>
 						</center>
 					</Col>
+					<div className="w-100 d-block d-sm-none my-2"></div>
 					<Col className="col-auto mx-auto mx-sm-0 ml-sm-auto">
 						<a href="https://github.com/HJunyuan" target="_blank" rel="noopener noreferrer">
 							<i className="fab fa-github"></i>
@@ -51,7 +52,7 @@ export default function() {
 				<hr />
 				<Row>
 					<Col>
-						<p className="text-muted">
+						<p className="text-muted text-center text-sm-left">
 							© {new Date().getFullYear()} {query.site.siteMetadata.title}
 							<br />
 							All rights reserved

@@ -6,15 +6,15 @@
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 
-#gatsby-focus-wrapper {
-	min-height: 100vh;
-	position: relative;
-}
+// #gatsby-focus-wrapper {
+// 	min-height: 100vh;
+// 	position: relative;
+// }
 
-main {
-	@extend .pt-4;
-	padding-bottom: 350px; // Height of the footer element
-}
+// main {
+// 	@extend .pt-4;
+// 	padding-bottom: 350px; // Height of the footer element
+// }
 
 p.tagline {
 	font-family: $headings-font-family;
@@ -28,10 +28,6 @@ a.tagline-btn {
 	font-weight: 400;
 	letter-spacing: 0.05em;
 	border-bottom: 2px solid $gray-300;
-
-	// &:after {
-	// 	content: " >";
-	// }
 
 	&:hover {
 		text-decoration: none;
