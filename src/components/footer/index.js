@@ -18,7 +18,7 @@ export default function() {
 		<footer>
 			<Container>
 				<Row className="align-items-end my-2">
-					<Col className="col-auto mx-auto mx-md-0">
+					<Col className="col-auto mx-auto mx-sm-0">
 						<p>Follow Kyle at</p>
 
 						<center>
@@ -42,7 +42,7 @@ export default function() {
 							</a>
 						</center>
 					</Col>
-					<Col className="col-auto mx-auto mx-md-0 ml-md-auto">
+					<Col className="col-auto mx-auto mx-sm-0 ml-sm-auto">
 						<a href="https://github.com/HJunyuan" target="_blank" rel="noopener noreferrer">
 							<i className="fab fa-github"></i>
 						</a>
