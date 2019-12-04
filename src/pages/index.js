@@ -79,7 +79,7 @@ export default function IndexPage({ data }) {
 		<React.Fragment>
 			<SEO title={data.site.siteMetadata.title + ` | ` + data.site.siteMetadata.description} />
 			<Layout noContainer>
-				<div className="position-relative" style={{ height: "95vh", minHeight: "550px" }}>
+				<section className="position-relative" style={{ height: "95vh", minHeight: "550px" }}>
 					<Img fluid={data.landingImage.childImageSharp.fluid} className="w-100 h-100" />
 
 					<div className="position-absolute w-100 h-100" style={{ top: "45%" }}>
@@ -99,10 +99,10 @@ export default function IndexPage({ data }) {
 							</Link>
 						</Container>
 					</div>
-				</div>
+				</section>
 
-				<Container>
-					<Row className="justify">
+				<Container as="section">
+					<Row className="justify" as="section">
 						<Col className="my-5">
 							<h2 className="mb-0">Projects</h2>
 							<div className="d-flex align-items-end mb-2">
@@ -117,7 +117,7 @@ export default function IndexPage({ data }) {
 							</center>
 						</Col>
 					</Row>
-					<Row>
+					<Row as="section">
 						<Col className="my-5">
 							<h2 className="m-0">Blog</h2>
 							<div className="d-flex align-items-end mb-2">

@@ -20,13 +20,13 @@ export default function PostTemplate({
 				<div className={Styles.cardImage}>
 					<Img fluid={frontmatter.coverImg.childImageSharp.fluid} alt={frontmatter.title} />
 				</div>
-				<div className={Styles.content}>
+				<article className={Styles.content}>
 					<h1 className={Styles.title}>{frontmatter.title}</h1>
 					<p className="subtitle font-italic">{frontmatter.subtitle}</p>
 					<div className={Styles.date}>{frontmatter.date}</div>
 					<hr></hr>
 					<div className={Styles.innerContent} dangerouslySetInnerHTML={{ __html: html }} />
-				</div>
+				</article>
 			</div>
 		</Layout>
 	);
