@@ -48,15 +48,15 @@ module.exports = {
 					{ family: "Source Sans Pro", variants: ["300", "400", "600", "700"] }
 				]
 			}
-		},
-		{
-			resolve: `gatsby-source-graphql`,
-			options: {
-				typeName: `WPGraphQL`,
-				fieldName: `wpgraphql`,
-				url: `http://hjunyuan/graphql` // Local installation of Wordpress for development
-			}
 		}
+		// {
+		// 	resolve: `gatsby-source-graphql`,
+		// 	options: {
+		// 		typeName: `WPGraphQL`,
+		// 		fieldName: `wpgraphql`,
+		// 		url: `http://hjunyuan/graphql` // Local installation of Wordpress for development
+		// 	}
+		// }
 		// {
 		// 	resolve: `gatsby-plugin-manifest`,
 		// 	options: {
