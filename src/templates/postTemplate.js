@@ -19,8 +19,9 @@ export default function PostTemplate({
 					<Img fluid={frontmatter.coverImg.childImageSharp.fluid} alt={frontmatter.title} />
 				</div>
 				<div className={Styles.content}>
-					<h1>{frontmatter.title}</h1>
-					<span className={Styles.date}>{frontmatter.date}</span>
+					<h1 className={Styles.title}>{frontmatter.title}</h1>
+					<p className={Styles.subtitle}>{frontmatter.subtitle}</p>
+					<div className={Styles.date}>{frontmatter.date}</div>
 					<hr></hr>
 					<div className={Styles.innerContent} dangerouslySetInnerHTML={{ __html: html }} />
 				</div>
@@ -37,6 +38,7 @@ export const query = graphql`
 				date(formatString: "DD MMMM YYYY")
 				path
 				title
+				subtitle
 				coverImg {
 					childImageSharp {
 						fluid(maxWidth: 1200) {
