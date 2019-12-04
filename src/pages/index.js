@@ -20,7 +20,7 @@ export default function IndexPage({ data }) {
 					<Card>
 						<Link to={frontmatter.path}>
 							<Img
-								className="card-img"
+								className="card-img-top"
 								style={{ height: "200px" }}
 								fluid={fluid}
 								alt={frontmatter.title}
@@ -85,7 +85,7 @@ export default function IndexPage({ data }) {
 					<div className="position-absolute w-100 h-100" style={{ top: "45%" }}>
 						<Container>
 							<h1 className="m-0 name">Kyle Huang Junyuan</h1>
-							<p className="tagline">Improving lives with technology</p>
+							<p className="subtitle">Improving lives with technology</p>
 							{/* <p style={{ maxWidth: "450px" }} className="my-4">
 								Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal
 								to understand how technology works in the hopes that someday, I could make the dreams of mine and others
@@ -106,7 +106,7 @@ export default function IndexPage({ data }) {
 						<Col className="my-5">
 							<h2 className="mb-0">Projects</h2>
 							<div className="d-flex align-items-end mb-2">
-								<p className="flex-grow-1 tagline">A glimpse of my adventures</p>
+								<p className="flex-grow-1 subtitle">A glimpse of my adventures</p>
 								<Link className="tagline-btn d-none d-sm-block" to="/projects">
 									View all
 								</Link>
@@ -121,7 +121,7 @@ export default function IndexPage({ data }) {
 						<Col className="my-5">
 							<h2 className="m-0">Blog</h2>
 							<div className="d-flex align-items-end mb-2">
-								<p className="flex-grow-1 tagline">Recent posts</p>
+								<p className="flex-grow-1 subtitle">Recent posts</p>
 								<Link className="tagline-btn d-none d-sm-block" to="/blog">
 									View all
 								</Link>
