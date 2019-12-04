@@ -82,19 +82,21 @@ export default function IndexPage({ data }) {
 				<div className="position-relative" style={{ height: "95vh", minHeight: "550px" }}>
 					<Img fluid={data.landingImage.childImageSharp.fluid} className="w-100 h-100" />
 
-					<div className="position-absolute w-100 h-100" style={{ top: "23%" }}>
+					<div className="position-absolute w-100 h-100" style={{ top: "45%" }}>
 						<Container>
 							<h1 className="m-0 name">Kyle Huang Junyuan</h1>
-							<p className="m-0 tagline">Improving lives with technology</p>
-							<p style={{ maxWidth: "450px" }} className="my-4">
+							<p className="tagline">Improving lives with technology</p>
+							{/* <p style={{ maxWidth: "450px" }} className="my-4">
 								Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal
 								to understand how technology works in the hopes that someday, I could make the dreams of mine and others
 								into reality. I genuinely crave to address challenges with the use of technology to improve lives by
 								making a positive difference in the world. No future we dream of is impossible if we set our mind to it.
 								Just as innovators who often use ingenious yet simple solutions to solve complex problems, there is
 								always a way!
-							</p>
-							<Button>More about Kyle</Button>
+							</p> */}
+							<Link to="/about">
+								<Button>Learn more about Kyle</Button>
+							</Link>
 						</Container>
 					</div>
 				</div>
