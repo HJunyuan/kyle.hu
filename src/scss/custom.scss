@@ -31,7 +31,7 @@ a.tagline-btn {
 
 	&:hover {
 		text-decoration: none;
-		border-bottom: 2px solid $gray-500;
+		border-bottom: 2px solid $gray-700;
 	}
 }
 
@@ -50,7 +50,11 @@ a.tagline-btn {
 }
 
 @media (max-width: 575.98px) {
-	h1.name {
+	// h1.name {
+	// 	font-size: $h2-font-size;
+	// }
+
+	h1 {
 		font-size: $h2-font-size;
 	}
 
