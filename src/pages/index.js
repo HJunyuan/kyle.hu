@@ -172,7 +172,6 @@ export const query = graphql`
 					frontmatter {
 						date(formatString: "DD MMMM YYYY")
 						title
-						excerpt
 						path
 						published
 						coverImg {
