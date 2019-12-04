@@ -3,7 +3,7 @@ path: "/projects/ngee-ann-fyp"
 date: "2019-05-24"
 coverImg: "./adam-robot2.jpg"
 title: "Ngee Ann Polytechnic Final Year Project"
-excerpt: "My final year project in Ngee Ann Polytechnic involved assembling a fully autonomous bipedal robot tasked to complete an undisclosed route."
+subtitle: ""
 published: true
 category: ["projects"]
 tags: ["FYP", "Electronics"]

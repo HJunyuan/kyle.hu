@@ -3,7 +3,7 @@ path: "/projects/ntu-fyp"
 date: "2019-09-01"
 coverImg: "./adam-robot2.jpg"
 title: "NTU FYP"
-excerpt: "My final year project in Ngee Ann Polytechnic involved assembling a fully autonomous bipedal robot tasked to complete an undisclosed route."
+subtitle: ""
 published: true
 category: ["projects"]
 tags: ["FYP", "Electronics"]

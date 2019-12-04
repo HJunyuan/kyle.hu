@@ -3,7 +3,7 @@ path: "/blog/fourth-post"
 date: "2019-04-25"
 coverImg: "./first-post.jpg"
 title: "Latest Post"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sodales nunc. Ut consectetur nulla ante. Nullam sed blandit tortor. Integer tempus feugiat ligula sed fringilla. Praesent eu felis ut mauris porta fringilla sed sed elit."
+subtitle: ""
 published: true
 category: ["blog"]
 tags: ["Post", "First"]
