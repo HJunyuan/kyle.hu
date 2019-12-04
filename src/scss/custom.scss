@@ -55,7 +55,18 @@ a.tagline-btn {
 	// }
 
 	h1 {
-		font-size: $h2-font-size;
+		font-size: $font-size-base * 2;
+	}
+	h2 {
+		font-size: $font-size-base * 1.5;
+	}
+	h3 {
+		font-size: $font-size-base * 1.25;
+	}
+	h4,
+	h5,
+	h6 {
+		font-size: $font-size-base;
 	}
 
 	.card {
