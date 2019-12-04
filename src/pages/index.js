@@ -77,7 +77,7 @@ export default function IndexPage({ data }) {
 
 	return (
 		<React.Fragment>
-			<SEO title="Home" />
+			<SEO title={data.site.siteMetadata.title + ` | ` + data.site.siteMetadata.description} />
 			<Layout noContainer>
 				<div className="position-relative" style={{ height: "95vh", minHeight: "550px" }}>
 					<Img fluid={data.landingImage.childImageSharp.fluid} className="w-100 h-100" />
@@ -88,9 +88,11 @@ export default function IndexPage({ data }) {
 							<p className="m-0 tagline">Improving lives with technology</p>
 							<p style={{ maxWidth: "450px" }} className="my-4">
 								Innovation and its ability to make an impact on the world has always fascinated me. It is my life goal
-								to understand how certain technology works in the hopes that someday, I could actually make dreams into
-								reality. I genuinely crave to address challenges with the use of technology to improve lives by making a
-								positive difference...
+								to understand how technology works in the hopes that someday, I could make the dreams of mine and others
+								into reality. I genuinely crave to address challenges with the use of technology to improve lives by
+								making a positive difference in the world. No future we dream of is impossible if we set our mind to it.
+								Just as innovators who often use ingenious yet simple solutions to solve complex problems, there is
+								always a way!
 							</p>
 							<Button>More about Kyle</Button>
 						</Container>
@@ -188,6 +190,12 @@ export const query = graphql`
 				fluid(maxWidth: 1920) {
 					...GatsbyImageSharpFluid
 				}
+			}
+		}
+		site {
+			siteMetadata {
+				description
+				title
 			}
 		}
 	}

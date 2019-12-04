@@ -10,10 +10,12 @@ export default function PostTemplate({
 	data // this prop will be injected by the GraphQL query below.
 }) {
 	const { markdownRemark } = data; // data.markdownRemark holds our post data
-	const { frontmatter, html } = markdownRemark;
+	const { html, excerpt, frontmatter } = markdownRemark;
+	console.log(excerpt);
+
 	return (
 		<Layout>
-			<SEO title={frontmatter.title} />
+			<SEO title={frontmatter.title} description={frontmatter.subtitle || excerpt} />
 			<div className={Styles.cardContainer}>
 				<div className={Styles.cardImage}>
 					<Img fluid={frontmatter.coverImg.childImageSharp.fluid} alt={frontmatter.title} />
@@ -34,6 +36,7 @@ export const query = graphql`
 	query($path: String!) {
 		markdownRemark(frontmatter: { path: { eq: $path } }) {
 			html
+			excerpt(format: PLAIN)
 			frontmatter {
 				date(formatString: "DD MMMM YYYY")
 				path
