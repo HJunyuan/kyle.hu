@@ -22,7 +22,7 @@ export default function PostTemplate({
 				</div>
 				<div className={Styles.content}>
 					<h1 className={Styles.title}>{frontmatter.title}</h1>
-					<p className={Styles.subtitle}>{frontmatter.subtitle}</p>
+					<p className="subtitle font-italic">{frontmatter.subtitle}</p>
 					<div className={Styles.date}>{frontmatter.date}</div>
 					<hr></hr>
 					<div className={Styles.innerContent} dangerouslySetInnerHTML={{ __html: html }} />

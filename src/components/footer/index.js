@@ -19,7 +19,7 @@ export default function() {
 			<Container>
 				<Row className="align-items-end my-2">
 					<Col className="col-auto mx-auto mx-sm-0">
-						<p className="text-center text-sm-left">Follow Kyle at</p>
+						<p className="subtitle text-center text-sm-left">Follow Kyle at</p>
 
 						<center>
 							<a href="https://www.facebook.com/HJunyuan" target="_blank" rel="noopener noreferrer">
