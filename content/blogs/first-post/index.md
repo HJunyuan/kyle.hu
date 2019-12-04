@@ -3,7 +3,7 @@ path: "/blog/first-post"
 date: "2019-04-19"
 coverImg: "./first-post.jpg"
 title: "Do Singaporeans actually care if our personal data gets stolen online?"
-subtitle: ""
+subtitle: "Subtitle goes here..."
 published: true
 category: ["blog"]
 tags: ["Post", "First"]
