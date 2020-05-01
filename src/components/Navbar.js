@@ -22,6 +22,7 @@ const Navbar = styled.nav`
   top: 0;
   margin-top: calc(var(--spacing) / 2);
   margin-bottom: calc(var(--spacing) / 2);
+  z-index: 100;
 `;
 
 const NavbarNav = styled.ul`

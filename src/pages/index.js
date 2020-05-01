@@ -9,10 +9,11 @@ const IndexPage = () => (
     <SEO title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
-    <p>{false && content}</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+
+    <div style={{ maxWidth: `300px`, marginBottom: `1rem` }}>
       <Image />
     </div>
+    <p>{content}</p>
   </Layout>
 );
 
