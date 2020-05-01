@@ -1,26 +1,28 @@
 :root {
-  font-size: 16px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --color-primary: #112d4e;
   --color-secondary: #3f72af;
   --color-bg: #f9f7f7;
+  --navbar-height: 4.375rem; /* 70px */
+  --spacing: 2rem;
 }
 
-body {
+html body {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-primary);
   background-color: var(--color-bg);
   margin: 0;
   padding: 0;
+  margin-top: calc(var(--navbar-height) + var(--spacing));
 }
 
+/* Scrollbar */
 body::-webkit-scrollbar {
   width: 0.25rem;
 }
-
 body::-webkit-scrollbar-track {
   background: var(--color-primary);
 }
-
 body::-webkit-scrollbar-thumb {
   background: var(--color-secondary);
 }
