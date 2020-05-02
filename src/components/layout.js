@@ -7,7 +7,7 @@ import Navbar from "./Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, ...rest }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -19,11 +19,13 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <View>
+    <View {...rest}>
       <Navbar />
       <Main className="container">{children}</Main>
       <footer className="container">
-        {`© ${data.site.siteMetadata.title} ${new Date().getFullYear()}`}
+        {`© ${new Date().getFullYear()}, ${
+          data.site.siteMetadata.title
+        }. All rights reserved.`}
       </footer>
     </View>
   );
@@ -36,7 +38,7 @@ Layout.propTypes = {
 export default Layout;
 
 const View = styled.div`
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
 `;
