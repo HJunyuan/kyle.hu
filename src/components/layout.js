@@ -45,5 +45,11 @@ const View = styled.div`
 
 const Main = styled.main`
   flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+
   margin-top: calc(var(--navbar-height) + var(--spacing));
 `;
