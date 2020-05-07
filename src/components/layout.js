@@ -22,7 +22,7 @@ const Layout = ({ children, ...rest }) => {
     <View {...rest}>
       <Navbar />
       <Main className="container">{children}</Main>
-      <footer className="container">
+      <footer className="container text-center mb-4">
         {`© ${new Date().getFullYear()}, ${
           data.site.siteMetadata.title
         }. All rights reserved.`}
@@ -38,7 +38,7 @@ Layout.propTypes = {
 export default Layout;
 
 const View = styled.div`
-  min-height: 90vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
 `;
