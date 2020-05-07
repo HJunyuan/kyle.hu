@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { Col, Row } from "react-bootstrap";
 
 import landing from "../images/landing.svg";
@@ -18,15 +19,21 @@ export default () => {
             draggable={false}
           />
         </Col>
-        <Col md={6} className="my-2">
+        <LandingText md={6} className="my-2">
           <h1>Kyle Huang Junyuan</h1>
           <p>Computer Science Undergraduate</p>
           <Social />
-        </Col>
+        </LandingText>
       </Row>
     </Layout>
   );
 };
+
+const LandingText = styled(Col)`
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
 
 // const content = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis nunc. Duis ultricies lacus sed turpis tincidunt id. Eu lobortis elementum nibh tellus molestie nunc. Et malesuada fames ac turpis. Pharetra pharetra massa massa ultricies mi quis. Scelerisque varius morbi enim nunc. Orci a scelerisque purus semper eget duis at. Dictum varius duis at consectetur lorem. In hac habitasse platea dictumst quisque sagittis. Adipiscing tristique risus nec feugiat. Et egestas quis ipsum suspendisse ultrices gravida. Libero id faucibus nisl tincidunt eget nullam non.
 
