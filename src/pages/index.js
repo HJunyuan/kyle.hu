@@ -4,6 +4,7 @@ import { Col, Row } from "react-bootstrap";
 import landing from "../images/landing.svg";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Social from "../components/Social";
 
 export default () => {
   return (
@@ -20,6 +21,7 @@ export default () => {
         <Col md={6} className="my-2">
           <h1>Kyle Huang Junyuan</h1>
           <p>Computer Science Undergraduate</p>
+          <Social />
         </Col>
       </Row>
     </Layout>
