@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Navbar from "./Navbar";
+
+import "typeface-open-sans";
+import "typeface-raleway";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 
