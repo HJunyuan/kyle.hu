@@ -28,8 +28,8 @@ export default () => {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        alt="Facebook"
-        title="Facebook"
+        alt="Instagram"
+        title="Instagram"
         href="https://www.instagram.com/HJunyuan"
       >
         <FaInstagram />
@@ -37,8 +37,8 @@ export default () => {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        alt="Facebook"
-        title="Facebook"
+        alt="GitHub"
+        title="GitHub"
         href="https://github.com/HJunyuan"
       >
         <FaGithub />
