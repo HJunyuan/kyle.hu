@@ -19,9 +19,11 @@ export default () => {
             draggable={false}
           />
         </Col>
-        <LandingText md={6} className="my-2">
+        <LandingText md={6}>
           <h1>Kyle Huang Junyuan</h1>
-          <p>Computer Science Undergraduate</p>
+          <p style={{ color: "#3F72AF", fontSize: "1.2rem" }}>
+            Computer Science Undergraduate
+          </p>
           <Social />
         </LandingText>
       </Row>
@@ -32,6 +34,11 @@ export default () => {
 const LandingText = styled(Col)`
   @media (max-width: 768px) {
     text-align: center;
+    margin: 2.5rem 0;
+  }
+
+  h1 {
+    font-weight: bold;
   }
 `;
 
