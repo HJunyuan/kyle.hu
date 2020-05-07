@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaFacebook, FaInstagram, FaGithub } from "react-icons/fa";
 
-const Row = styled.div`
-  display: flex;
-
+const Row = styled.p`
   svg {
     margin-right: 1rem;
     font-size: 2rem;
