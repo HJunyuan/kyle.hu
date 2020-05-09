@@ -42,7 +42,7 @@ Layout.propTypes = {
 export default Layout;
 
 const View = styled.div`
-  min-height: 95vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 `;

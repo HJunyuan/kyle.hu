@@ -6,6 +6,13 @@
   --spacing: 2rem;
 }
 
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
 html > body {
   font-size: 16px;
   font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
