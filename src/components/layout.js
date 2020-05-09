@@ -26,7 +26,7 @@ const Layout = ({ children, ...rest }) => {
     <View {...rest}>
       <Navbar />
       <Main className="container">{children}</Main>
-      <footer className="container text-center mb-4">
+      <footer className="container">
         {`© ${new Date().getFullYear()}, ${
           data.site.siteMetadata.title
         }. All rights reserved.`}
@@ -45,6 +45,12 @@ const View = styled.div`
   min-height: 100%;
   display: flex;
   flex-direction: column;
+
+  footer {
+    text-align: center;
+    margin: 1.5rem auto;
+    font-size: 0.8rem;
+  }
 `;
 
 const Main = styled.main`
