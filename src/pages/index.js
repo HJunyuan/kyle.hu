@@ -37,7 +37,7 @@ export default () => {
         </Col>
         <LandingText md={6}>
           <h1>{site.siteMetadata.title}</h1>
-          <p style={{ color: "#3F72AF", fontSize: "1.2rem" }}>
+          <p style={{ color: "#3F72AF" }}>
             {/* Computer Science Undergraduate */}
             {site.siteMetadata.description}
           </p>
@@ -49,13 +49,14 @@ export default () => {
 };
 
 const LandingText = styled(Col)`
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     text-align: center;
     margin: 2.5rem 0;
   }
 
   h1 {
     font-weight: bold;
+    font-size: calc(30px + (40 - 30) * ((100vw - 300px) / (1600 - 300)));
   }
 `;
 
