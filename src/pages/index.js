@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { Col, Row } from "react-bootstrap";
 
@@ -8,9 +9,24 @@ import SEO from "../components/seo";
 import Social from "../components/Social";
 
 export default () => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+          }
+        }
+      }
+    `
+  );
+
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`}
+      />
       <Row className="align-items-center" as="section">
         <Col md={6} className="my-2">
           <img
@@ -20,9 +36,10 @@ export default () => {
           />
         </Col>
         <LandingText md={6}>
-          <h1>Kyle Huang Junyuan</h1>
+          <h1>{site.siteMetadata.title}</h1>
           <p style={{ color: "#3F72AF", fontSize: "1.2rem" }}>
-            Computer Science Undergraduate
+            {/* Computer Science Undergraduate */}
+            {site.siteMetadata.description}
           </p>
           <Social />
         </LandingText>
