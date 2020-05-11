@@ -12,7 +12,7 @@ export default ({ ...rest }) => {
           </NavbarIcon>
         </Link>
         <NavbarNav style={{ marginLeft: "auto" }}>
-          <Link to="/">
+          <Link to="/about">
             <NavbarItem>About</NavbarItem>
           </Link>
           <Link to="/">
