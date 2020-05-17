@@ -2,7 +2,7 @@
   "name": "portfolio-site",
   "private": true,
   "description": "Kyle's portfolio",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Kyle Huang Junyuan <kyle@hjunyuan.com>",
   "dependencies": {
     "bootstrap": "^4.4.1",
@@ -42,9 +42,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/HJunyuan/porfolio-site"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/HJunyuan/porfolio-site/issues"
   }
 }
