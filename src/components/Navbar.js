@@ -11,7 +11,11 @@ export default ({ ...rest }) => {
             <span>K</span>
           </NavbarIcon>
         </Link>
-        {/* <NavbarNav style={{ marginLeft: "auto" }}>
+        <NavbarNav style={{ marginLeft: "auto" }}>
+          <Link to="/">
+            {/* TODO: Hide Home if in Home page */}
+            <NavbarItem>Home</NavbarItem>
+          </Link>
           <Link to="/about">
             <NavbarItem>About</NavbarItem>
           </Link>
@@ -21,7 +25,7 @@ export default ({ ...rest }) => {
           <Link to="/">
             <NavbarItem>Blog</NavbarItem>
           </Link>
-        </NavbarNav> */}
+        </NavbarNav>
       </div>
     </Navbar>
   );
@@ -42,36 +46,36 @@ const Navbar = styled.nav`
   }
 `;
 
-// const NavbarNav = styled.ul`
-//   height: var(--navbar-height);
-//   font-weight: bold;
-//   list-style: none;
-//   padding: 0;
-//   margin: 0;
-//   border-radius: var(--navbar-height);
+const NavbarNav = styled.ul`
+  height: var(--navbar-height);
+  font-weight: bold;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: var(--navbar-height);
 
-//   display: flex;
-//   align-items: center;
+  display: flex;
+  align-items: center;
 
-//   background-color: var(--color-primary);
+  background-color: var(--color-primary);
 
-//   @media screen and (max-width: 576px) {
-//     display: none;
-//   }
-// `;
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
+`;
 
-// const NavbarItem = styled.li`
-//   margin: 0 1rem;
-//   padding: 0.8rem;
-//   border-radius: var(--navbar-height);
+const NavbarItem = styled.li`
+  margin: 0 1rem;
+  padding: 0.8rem;
+  border-radius: var(--navbar-height);
 
-//   transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 
-//   :hover {
-//     color: var(--color-primary);
-//     background-color: var(--color-bg);
-//   }
-// `;
+  :hover {
+    color: var(--color-primary);
+    background-color: var(--color-bg);
+  }
+`;
 
 const NavbarIcon = styled.div`
   width: var(--navbar-height);
