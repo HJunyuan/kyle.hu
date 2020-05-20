@@ -33,7 +33,7 @@ export default () => {
             src={landing}
             alt="A man looking out of a window"
             draggable={false}
-            style={{ maxWidth: "540px" }}
+            style={{ maxHeight: "450px" }}
           />
         </Col>
         <LandingText md={6}>
