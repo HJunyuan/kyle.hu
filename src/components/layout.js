@@ -59,4 +59,8 @@ const Main = styled.main`
   justify-content: center;
 
   margin-top: calc(var(--navbar-height) + var(--spacing));
+
+  @media (max-width: 575.98px) {
+    margin-top: 0;
+  }
 `;
