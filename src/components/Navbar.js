@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
 import { FaHome, FaUser, FaBriefcase, FaPenAlt } from "react-icons/fa";
-import { GrArticle } from "react-icons/gr";
 
 const menuItems = [
   { label: "Home", icon: FaHome, link: "/" },
@@ -13,8 +12,8 @@ const menuItems = [
 
 export default props => {
   return (
-    <Navbar>
-      <NavbarNav>
+    <Position>
+      <Navbar>
         {menuItems.map((item, i) => (
           <Link key={i} to={item.link}>
             <NavbarItem key={i}>
@@ -25,12 +24,12 @@ export default props => {
             </NavbarItem>
           </Link>
         ))}
-      </NavbarNav>
-    </Navbar>
+      </Navbar>
+    </Position>
   );
 };
 
-const Navbar = styled.nav`
+const Position = styled.nav`
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -47,7 +46,7 @@ const Navbar = styled.nav`
   }
 `;
 
-const NavbarNav = styled.ul`
+const Navbar = styled.ul`
   height: var(--navbar-height);
   font-weight: bold;
   list-style: none;
@@ -61,26 +60,28 @@ const NavbarNav = styled.ul`
 
   background-color: var(--color-primary);
 
-  > a {
-    color: white;
-    text-decoration: none;
+  @media (max-width: 575.98px) {
+    border-radius: 0;
   }
+`;
+
+const Link = styled(GatsbyLink)`
+  color: white;
+  text-decoration: none !important;
 
   @media (min-width: 576px) {
-    > a:hover > li,
-    > a:focus > li,
-    > a:active > li {
+    :hover li,
+    :focus li,
+    :active li {
       color: var(--color-primary);
       background-color: var(--color-bg);
     }
   }
 
   @media (max-width: 575.98px) {
-    border-radius: 0;
-
-    > a:hover > li > span::after,
-    > a:focus > li > span::after,
-    > a:active > li > span::after {
+    :hover span::after,
+    :focus span::after,
+    :active span::after {
       --dot-size: 5px;
       content: "";
       display: block;
