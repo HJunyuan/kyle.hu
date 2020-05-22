@@ -1,33 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
 import { FaHome, FaUser, FaBriefcase, FaPenAlt } from "react-icons/fa";
 
-const menuItems = [
-  { label: "Home", icon: FaHome, link: "/" },
-  { label: "About", icon: FaUser, link: "/about" },
-  { label: "Projects", icon: FaBriefcase, link: "/projects" },
-  { label: "Blog", icon: FaPenAlt, link: "/blog" },
+const pages = [
+  { label: "Home", icon: FaHome, link: "/", active: false },
+  { label: "About", icon: FaUser, link: "/about", active: false },
+  { label: "Projects", icon: FaBriefcase, link: "/projects", active: false },
+  { label: "Blog", icon: FaPenAlt, link: "/blog", active: false },
 ];
 
-export default props => {
+export default () => {
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    const path = pagePath(window.location.pathname);
+
+    setMenuItems(
+      pages.map((item, i) => (
+        <Link key={i} to={item.link} className={item.link === path && "active"}>
+          <NavbarItem>
+            <NavbarIcon>
+              <item.icon />
+            </NavbarIcon>
+            <NavbarLabel>{item.label}</NavbarLabel>
+          </NavbarItem>
+        </Link>
+      ))
+    );
+  }, []);
+
   return (
     <Position>
-      <Navbar>
-        {menuItems.map((item, i) => (
-          <Link key={i} to={item.link}>
-            <NavbarItem key={i}>
-              <NavbarIcon>
-                <item.icon />
-              </NavbarIcon>
-              <NavbarLabel>{item.label}</NavbarLabel>
-            </NavbarItem>
-          </Link>
-        ))}
-      </Navbar>
+      <Navbar>{menuItems}</Navbar>
     </Position>
   );
 };
+
+const pagePath = (pathname = "") => "/" + pathname.split("/")[1];
 
 const Position = styled.nav`
   position: fixed;
@@ -70,18 +80,20 @@ const Link = styled(GatsbyLink)`
   text-decoration: none !important;
 
   @media (min-width: 576px) {
-    :hover li,
-    :focus li,
-    :active li {
+    &:hover li,
+    &:focus li,
+    &:active li,
+    &.active li {
       color: var(--color-primary);
       background-color: var(--color-bg);
     }
   }
 
   @media (max-width: 575.98px) {
-    :hover span::after,
-    :focus span::after,
-    :active span::after {
+    &:hover span::after,
+    &:focus span::after,
+    &:active span::after,
+    &.active span::after {
       --dot-size: 5px;
       content: "";
       display: block;
