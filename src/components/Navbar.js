@@ -18,7 +18,12 @@ export default () => {
 
     setMenuItems(
       pages.map((item, i) => (
-        <Link key={i} to={item.link} className={item.link === path && "active"}>
+        <Link
+          key={i}
+          to={item.link}
+          alt={item.label}
+          className={item.link === path && "active"}
+        >
           <NavbarItem>
             <NavbarIcon>
               <item.icon />
@@ -82,7 +87,6 @@ const Link = styled(GatsbyLink)`
   @media (min-width: 576px) {
     &:hover li,
     &:focus li,
-    &:active li,
     &.active li {
       color: var(--color-primary);
       background-color: var(--color-bg);
@@ -90,10 +94,11 @@ const Link = styled(GatsbyLink)`
   }
 
   @media (max-width: 575.98px) {
-    &:hover span::after,
-    &:focus span::after,
-    &:active span::after,
-    &.active span::after {
+    &.active div::after {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
       --dot-size: 5px;
       content: "";
       display: block;
@@ -103,10 +108,18 @@ const Link = styled(GatsbyLink)`
       border-radius: var(--dot-size);
       background-color: white;
     }
+
+    &:hover span,
+    &:focus span {
+      opacity: 100;
+      visibility: visible;
+      transform: translateX(-50%) translateY(-4.5rem);
+    }
   }
 `;
 
 const NavbarItem = styled.li`
+  position: relative;
   margin: 0 1rem;
   padding: 0.8rem;
   border-radius: var(--navbar-height);
@@ -114,7 +127,7 @@ const NavbarItem = styled.li`
   transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 `;
 
-const NavbarIcon = styled.span`
+const NavbarIcon = styled.div`
   color: white;
   font-size: 1.7rem;
   line-height: 1rem;
@@ -128,7 +141,37 @@ const NavbarLabel = styled.span`
   color: inherit;
 
   @media (max-width: 575.98px) {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-4rem);
+    padding: 0.3rem 0.7rem;
+
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
+    font-weight: normal;
+
+    background-color: var(--color-secondary);
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 500ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid var(--color-secondary);
+
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -0.5rem;
+    }
   }
 `;
 
