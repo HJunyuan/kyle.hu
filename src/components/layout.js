@@ -38,8 +38,10 @@ const Grid = styled.div`
   display: grid;
   grid-template-rows: 1fr auto;
 
-  > main {
-    margin-top: calc(var(--navbar-height) + var(--spacing));
+  @media (min-width: 576px) {
+    > main {
+      margin-top: calc(var(--navbar-height) + var(--spacing));
+    }
   }
 
   > footer {
