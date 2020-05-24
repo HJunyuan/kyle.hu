@@ -94,6 +94,7 @@ const Position = styled.nav`
 
 const Navbar = styled.ul`
   height: var(--navbar-height);
+  font-family: "Raleway", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   list-style: none;
   padding: 0;
