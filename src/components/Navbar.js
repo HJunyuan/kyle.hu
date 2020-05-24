@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
 import { FaHome, FaUser, FaBriefcase, FaPenAlt } from "react-icons/fa";
@@ -12,7 +12,7 @@ const navlinks = [
 
 export default () => {
   const [menuItems, setMenuItems] = useState([]);
-  const [pageY, setPageY] = useState(0);
+  const pageY = useRef(0);
   const [visible, setVisible] = useState(true);
 
   /* Populate menu / highlight active page */
@@ -41,13 +41,10 @@ export default () => {
   /* Auto-hide navbar */
   useEffect(() => {
     const handleScroll = () => {
-      const currentPageY = window.pageYOffset;
+      const newPageY = window.pageYOffset;
 
-      setPageY(prev => {
-        const visible = prev > currentPageY;
-        setVisible(visible);
-        return currentPageY;
-      });
+      setVisible(pageY.current > newPageY);
+      pageY.current = newPageY;
     };
 
     // Register event listener
@@ -76,12 +73,22 @@ const Position = styled.nav`
   margin-bottom: calc(var(--spacing) / 2);
   z-index: 100;
 
+  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.hide {
+    transform: translate(-50%, -200%);
+  }
+
   @media (max-width: 575.98px) {
     bottom: 0;
     left: 0;
     right: 0;
     margin: 0;
     transform: none;
+
+    &.hide {
+      transform: translateY(200%);
+    }
   }
 `;
 
