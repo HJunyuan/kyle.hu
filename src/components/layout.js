@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import Navbar from "./Navbar";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 
 const Layout = ({ children, ...rest }) => {

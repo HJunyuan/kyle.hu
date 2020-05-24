@@ -1,7 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import { Col, Row } from "react-bootstrap";
 
 import landing from "../images/landing.svg";
 import Layout from "../components/layout";
@@ -27,16 +26,16 @@ export default () => {
       <SEO
         title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`}
       />
-      <Row className="align-items-center" as="section">
-        <Col md={6} className="my-2">
+      <section>
+        <div>
           <img
             src={landing}
             alt="A man looking out of a window"
             draggable={false}
             style={{ maxHeight: "450px" }}
           />
-        </Col>
-        <LandingText md={6}>
+        </div>
+        <LandingText>
           <h1>{site.siteMetadata.title}</h1>
           <p style={{ color: "#3F72AF" }}>
             {/* Computer Science Undergraduate */}
@@ -44,12 +43,12 @@ export default () => {
           </p>
           <Social />
         </LandingText>
-      </Row>
+      </section>
     </Layout>
   );
 };
 
-const LandingText = styled(Col)`
+const LandingText = styled.div`
   @media (max-width: 767px) {
     text-align: center;
     margin: 2.5rem 0;
