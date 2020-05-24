@@ -3,7 +3,7 @@ import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
 import { FaHome, FaUser, FaBriefcase, FaPenAlt } from "react-icons/fa";
 
-const pages = [
+const navlinks = [
   { label: "Home", icon: FaHome, link: "/", active: false },
   { label: "About", icon: FaUser, link: "/about", active: false },
   { label: "Projects", icon: FaBriefcase, link: "/projects", active: false },
@@ -12,12 +12,15 @@ const pages = [
 
 export default () => {
   const [menuItems, setMenuItems] = useState([]);
+  const [pageY, setPageY] = useState(0);
+  const [visible, setVisible] = useState(true);
 
+  /* Populate menu / highlight active page */
   useEffect(() => {
-    const path = pagePath(window.location.pathname);
+    const path = decodePath(window.location.pathname);
 
     setMenuItems(
-      pages.map((item, i) => (
+      navlinks.map((item, i) => (
         <Link
           key={i}
           to={item.link}
@@ -35,14 +38,35 @@ export default () => {
     );
   }, []);
 
+  /* Auto-hide navbar */
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPageY = window.pageYOffset;
+
+      setPageY(prev => {
+        const visible = prev > currentPageY;
+        setVisible(visible);
+        return currentPageY;
+      });
+    };
+
+    // Register event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Position>
+    <Position className={!visible && "hide"}>
       <Navbar>{menuItems}</Navbar>
     </Position>
   );
 };
 
-const pagePath = (pathname = "") => "/" + pathname.split("/")[1];
+const decodePath = (pathname = "") => "/" + pathname.split("/")[1];
 
 const Position = styled.nav`
   position: fixed;
@@ -113,7 +137,7 @@ const Link = styled(GatsbyLink)`
     &:focus span {
       opacity: 100;
       visibility: visible;
-      transform: translateX(-50%) translateY(-4.5rem);
+      transform: translate(-50%, -4.5rem);
     }
   }
 `;
@@ -124,7 +148,7 @@ const NavbarItem = styled.li`
   padding: 0.8rem;
   border-radius: var(--navbar-height);
 
-  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 500ms cubic-bezier(0.16, 1, 0.3, 1);
 `;
 
 const NavbarIcon = styled.div`
@@ -145,7 +169,7 @@ const NavbarLabel = styled.span`
     visibility: hidden;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%) translateY(-4rem);
+    transform: translate(-50%, -4rem);
     padding: 0.3rem 0.7rem;
 
     color: white;
