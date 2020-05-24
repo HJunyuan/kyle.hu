@@ -19,7 +19,7 @@ const Layout = ({ children, ...rest }) => {
   `);
 
   return (
-    <Grid className="container">
+    <Grid className="container" {...rest}>
       <Navbar />
       <main>{children}</main>
       <footer>{`© ${new Date().getFullYear()}, ${
@@ -37,6 +37,10 @@ const Grid = styled.div`
   min-height: 100%;
   display: grid;
   grid-template-rows: 1fr auto;
+
+  > main {
+    margin-top: 1rem;
+  }
 
   @media (min-width: 576px) {
     > main {
