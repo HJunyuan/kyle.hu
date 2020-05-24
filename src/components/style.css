@@ -44,7 +44,7 @@ p {
 /* Container */
 .container {
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 1rem;
 }
 @media (min-width: 576px) {
   .container {

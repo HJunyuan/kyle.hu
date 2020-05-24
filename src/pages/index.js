@@ -31,7 +31,7 @@ export default () => {
           src={landing}
           alt="A man looking out of a window"
           draggable={false}
-          // style={{ maxHeight: "450px" }}
+          style={{ maxHeight: "450px" }}
         />
         <div>
           <h1>{site.siteMetadata.title}</h1>
