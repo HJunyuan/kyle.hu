@@ -26,37 +26,52 @@ export default () => {
       <SEO
         title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`}
       />
-      <section>
+      <Grid>
+        <img
+          src={landing}
+          alt="A man looking out of a window"
+          draggable={false}
+          // style={{ maxHeight: "450px" }}
+        />
         <div>
-          <img
-            src={landing}
-            alt="A man looking out of a window"
-            draggable={false}
-            style={{ maxHeight: "450px" }}
-          />
-        </div>
-        <LandingText>
           <h1>{site.siteMetadata.title}</h1>
           <p style={{ color: "#3F72AF" }}>
             {/* Computer Science Undergraduate */}
             {site.siteMetadata.description}
           </p>
           <Social />
-        </LandingText>
-      </section>
+        </div>
+      </Grid>
     </Layout>
   );
 };
 
-const LandingText = styled.div`
+const Grid = styled.div`
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--spacing);
+  align-content: center;
+
   @media (max-width: 767px) {
-    text-align: center;
-    margin: 2.5rem 0;
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  h1 {
-    font-weight: bold;
-    font-size: calc(30px + (40 - 30) * ((100vw - 300px) / (1600 - 300)));
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 767px) {
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+
+    > h1 {
+      font-weight: bold;
+      font-size: calc(30px + (40 - 30) * ((100vw - 300px) / (1600 - 300)));
+    }
   }
 `;
 
