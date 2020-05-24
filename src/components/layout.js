@@ -19,15 +19,13 @@ const Layout = ({ children, ...rest }) => {
   `);
 
   return (
-    <View {...rest}>
+    <Grid className="container">
       <Navbar />
-      <Main className="container">{children}</Main>
-      <footer className="container">
-        {`© ${new Date().getFullYear()}, ${
-          data.site.siteMetadata.title
-        }. All rights reserved.`}
-      </footer>
-    </View>
+      <main>{children}</main>
+      <footer>{`© ${new Date().getFullYear()}, ${
+        data.site.siteMetadata.title
+      }. All rights reserved.`}</footer>
+    </Grid>
   );
 };
 
@@ -35,31 +33,19 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
-
-const View = styled.div`
+const Grid = styled.div`
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr auto;
 
-  footer {
+  > main {
+    margin-top: calc(var(--navbar-height) + var(--spacing));
+  }
+
+  > footer {
     text-align: center;
-    margin: 1.5rem auto;
-    font-size: 0.8rem;
+    margin: 1rem 0;
   }
 `;
 
-const Main = styled.main`
-  flex-grow: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-
-  margin-top: calc(var(--navbar-height) + var(--spacing));
-
-  @media (max-width: 575.98px) {
-    margin-top: 0;
-  }
-`;
+export default Layout;
