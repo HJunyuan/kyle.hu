@@ -47,6 +47,7 @@ export default () => {
 };
 
 const Grid = styled.div`
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: var(--spacing);
@@ -68,7 +69,7 @@ const Grid = styled.div`
 
     > h1 {
       font-weight: bold;
-      font-size: calc(30px + (40 - 30) * ((100vw - 300px) / (1600 - 300)));
+      font-size: min(max(1rem, 8vw), 2rem);
     }
   }
 `;
