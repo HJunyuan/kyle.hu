@@ -47,8 +47,6 @@ export default () => {
 };
 
 const Grid = styled.div`
-  height: 100%;
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: var(--spacing);

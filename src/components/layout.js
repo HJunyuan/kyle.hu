@@ -34,7 +34,7 @@ Layout.propTypes = {
 };
 
 const Grid = styled.div`
-  min-height: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 1fr auto;
 
@@ -44,7 +44,7 @@ const Grid = styled.div`
 
   @media (min-width: 576px) {
     > main {
-      margin-top: calc(var(--navbar-height) + var(--spacing));
+      margin-top: calc(var(--navbar-height) + 2 * var(--spacing));
     }
   }
 
