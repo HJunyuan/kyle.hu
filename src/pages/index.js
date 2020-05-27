@@ -35,10 +35,7 @@ export default () => {
         />
         <div>
           <h1>{site.siteMetadata.title}</h1>
-          <p style={{ color: "#3F72AF" }}>
-            {/* Computer Science Undergraduate */}
-            {site.siteMetadata.description}
-          </p>
+          <p style={{ color: "#3F72AF" }}>{site.siteMetadata.description}</p>
           <Social />
         </div>
       </Grid>
