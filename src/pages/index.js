@@ -35,10 +35,7 @@ export default () => {
         />
         <div>
           <h1>{site.siteMetadata.title}</h1>
-          <p style={{ color: "#3F72AF" }}>
-            {/* Computer Science Undergraduate */}
-            {site.siteMetadata.description}
-          </p>
+          <p style={{ color: "#3F72AF" }}>{site.siteMetadata.description}</p>
           <Social />
         </div>
       </Grid>
@@ -47,6 +44,7 @@ export default () => {
 };
 
 const Grid = styled.div`
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: var(--spacing);
@@ -68,7 +66,7 @@ const Grid = styled.div`
 
     > h1 {
       font-weight: bold;
-      font-size: calc(30px + (40 - 30) * ((100vw - 300px) / (1600 - 300)));
+      font-size: min(max(1rem, 8vw), 2rem);
     }
   }
 `;
