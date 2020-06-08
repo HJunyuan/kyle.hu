@@ -17,17 +17,6 @@ const ProjectCard = props => {
     }
   `);
 
-  /*
-  TODO:
-  - Automatically generate tags
-  - Set limit for number of tags (4?)
-  - Set word limit for title (10?)
-  */
-  let tags = [];
-  for (let i = 2010; i <= 2020; i++) {
-    tags.push(<span key={i}>{i}</span>);
-  }
-
   return (
     <Card>
       <Img
@@ -35,17 +24,22 @@ const ProjectCard = props => {
         draggable={false}
       />
       <CardContent>
-        <CardTag>{props.tags || tags}</CardTag>
-        <h2>{props.title}</h2>
+        <p>
+          {props.tag.slice(0, 5).map(tag => (
+            <CardTag>{tag}</CardTag>
+          ))}
+        </p>
+        <CardTitle>{props.title.split(" ").splice(0, 10).join(" ")}</CardTitle>
       </CardContent>
+      <CardLine />
     </Card>
   );
 };
 
 ProjectCard.defaultProps = {
   image: "about-kyle.jpg",
-  tag: ["2020", "2019"],
-  title: "Title goes here",
+  tag: ["2020", "NTU", "Video"],
+  title: "This is a Project Card with a very long long long long long title",
 };
 
 ProjectCard.propTypes = {
@@ -58,15 +52,18 @@ ProjectCard.propTypes = {
 export default ProjectCard;
 
 const Card = styled.div`
-  border-radius: 10px;
-  box-shadow: 4px 4px 5px var(--color-shadow);
+  position: relative;
+  border-radius: 5px;
+  border: 0.5px solid var(--color-border);
+  box-shadow: 1px 2px 2px var(--color-shadow);
   overflow: hidden;
 
   background-color: white;
 
   transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+
   &:hover {
-    transform: translateY(-0.4rem);
+    transform: translateY(-0.1rem);
   }
 `;
 
@@ -74,18 +71,26 @@ const CardContent = styled.div`
   padding: 1.5rem;
 `;
 
-const CardTag = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
+const CardTag = styled.span`
+  display: inline-block;
+  margin-right: 0.2rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.6rem;
 
-  > span {
-    margin: 0 0.2rem 0.2rem 0;
-    padding: 0 0.5rem;
-    border-radius: 1rem;
-    font-size: 0.8rem;
+  color: white;
+  background-color: var(--color-primary);
+`;
 
-    color: white;
-    background-color: var(--color-primary);
-  }
+const CardTitle = styled.h2`
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+`;
+
+const CardLine = styled.hr`
+  width: 25%;
+  height: 1.5px;
+  border: none;
+  background-color: var(--color-border);
 `;
