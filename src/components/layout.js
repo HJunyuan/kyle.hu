@@ -20,7 +20,7 @@ const Layout = ({ children, ...rest }) => {
 
   return (
     <Grid className="container" {...rest}>
-      <Navbar />
+      {/* <Navbar /> */}
       <main>{children}</main>
       <footer>{`© ${new Date().getFullYear()}, ${
         data.site.siteMetadata.title

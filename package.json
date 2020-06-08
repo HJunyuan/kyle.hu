@@ -2,7 +2,7 @@
   "name": "portfolio-site",
   "private": true,
   "description": "Kyle's portfolio",
-  "version": "0.3.0",
+  "version": "0.2.4",
   "author": "Kyle Huang Junyuan <kyle@hjunyuan.com>",
   "dependencies": {
     "gatsby": "^2.21.0",
