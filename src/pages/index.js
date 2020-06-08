@@ -1,7 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import { Col, Row } from "react-bootstrap";
 
 import landing from "../images/landing.svg";
 import Layout from "../components/layout";
@@ -27,37 +26,48 @@ export default () => {
       <SEO
         title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`}
       />
-      <Row className="align-items-center" as="section">
-        <Col md={6} className="my-2">
-          <img
-            src={landing}
-            alt="A man looking out of a window"
-            draggable={false}
-            style={{ maxHeight: "450px" }}
-          />
-        </Col>
-        <LandingText md={6}>
+      <Grid>
+        <img
+          src={landing}
+          alt="A man looking out of a window"
+          draggable={false}
+          style={{ maxHeight: "450px" }}
+        />
+        <div>
           <h1>{site.siteMetadata.title}</h1>
-          <p style={{ color: "#3F72AF" }}>
-            {/* Computer Science Undergraduate */}
-            {site.siteMetadata.description}
-          </p>
+          <p style={{ color: "#3F72AF" }}>{site.siteMetadata.description}</p>
           <Social />
-        </LandingText>
-      </Row>
+        </div>
+      </Grid>
     </Layout>
   );
 };
 
-const LandingText = styled(Col)`
+const Grid = styled.div`
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--spacing);
+  align-content: center;
+
   @media (max-width: 767px) {
-    text-align: center;
-    margin: 2.5rem 0;
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  h1 {
-    font-weight: bold;
-    font-size: calc(30px + (40 - 30) * ((100vw - 300px) / (1600 - 300)));
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 767px) {
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+
+    > h1 {
+      font-weight: bold;
+      font-size: min(max(1rem, 8vw), 2rem);
+    }
   }
 `;
 

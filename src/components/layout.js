@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import Navbar from "./Navbar";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 
 const Layout = ({ children, ...rest }) => {
@@ -20,15 +19,13 @@ const Layout = ({ children, ...rest }) => {
   `);
 
   return (
-    <View {...rest}>
-      <Navbar />
-      <Main className="container">{children}</Main>
-      <footer className="container">
-        {`© ${new Date().getFullYear()}, ${
-          data.site.siteMetadata.title
-        }. All rights reserved.`}
-      </footer>
-    </View>
+    <Grid className="container" {...rest}>
+      {/* <Navbar /> */}
+      <main>{children}</main>
+      <footer>{`© ${new Date().getFullYear()}, ${
+        data.site.siteMetadata.title
+      }. All rights reserved.`}</footer>
+    </Grid>
   );
 };
 
@@ -36,27 +33,25 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+const Grid = styled.div`
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
 
-const View = styled.div`
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+  > main {
+    margin-top: 1rem;
+  }
 
-  footer {
+  @media (min-width: 576px) {
+    > main {
+      margin-top: calc(var(--navbar-height) + 2 * var(--spacing));
+    }
+  }
+
+  > footer {
     text-align: center;
-    margin: 1.5rem auto;
-    font-size: 0.8rem;
+    margin: 1rem 0;
   }
 `;
 
-const Main = styled.main`
-  flex-grow: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-
-  margin-top: calc(var(--navbar-height) + var(--spacing));
-`;
+export default Layout;
