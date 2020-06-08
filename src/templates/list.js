@@ -8,7 +8,7 @@ import ProjectCard from "../components/ProjectCard";
 export default () => {
   return (
     <Layout>
-      <SEO title={`List Page`} />
+      <SEO title={`_ Page`} />
       <Header>
         <h1>Projects</h1>
         <p>A glimpse of my adventures</p>
