@@ -1,5 +1,5 @@
 ---
-path: "/first-post"
+slug: "/first-post"
 date: "2019-04-19"
 image: "./first-post.jpg"
 title: "Do Singaporeans actually care if our personal data gets stolen online?"
