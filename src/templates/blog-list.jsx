@@ -10,8 +10,8 @@ export default () => {
     <Layout>
       <SEO title={`_ Page`} />
       <Header>
-        <h1>Projects</h1>
-        <p>A glimpse of my adventures</p>
+        <h1>Blog Posts</h1>
+        <p>My thoughts</p>
       </Header>
 
       <List>
@@ -23,6 +23,26 @@ export default () => {
     </Layout>
   );
 };
+
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      timeToRead
+      excerpt
+      frontmatter {
+        title
+        image
+        date
+        tags
+      }
+      fields {
+        slug
+        date
+      }
+    }
+  }
+`;
 
 const Header = styled.header`
   & > h1 {
