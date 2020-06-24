@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-const ProjectCard = props => {
+const ProjectCard = (props) => {
   const defaultImg = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "about-kyle.jpg" }) {
@@ -25,7 +25,7 @@ const ProjectCard = props => {
       />
       <CardContent>
         <p>
-          {props.tag.slice(0, 5).map(tag => (
+          {props.tag.slice(0, 5).map((tag) => (
             <CardTag>{tag}</CardTag>
           ))}
         </p>
