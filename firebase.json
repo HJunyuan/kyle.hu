@@ -1,10 +1,20 @@
 {
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/*",
+        "destination": "/",
+        "type": 307
+      }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "public": "public",
+      "port": 5000,
+      "host": "0.0.0.0"
+    }
   }
 }
