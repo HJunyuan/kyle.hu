@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 
 import "./style.css";
 
