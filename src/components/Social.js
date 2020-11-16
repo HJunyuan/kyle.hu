@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FaFacebook, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Row = styled.p`
   svg {
@@ -19,20 +19,11 @@ export default () => {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        alt="Facebook"
-        title="Facebook"
-        href="https://www.facebook.com/HJunyuan"
+        alt="LinkedIn"
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/kyle-huang-junyuan/"
       >
-        <FaFacebook />
-      </a>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        alt="Instagram"
-        title="Instagram"
-        href="https://www.instagram.com/HJunyuan"
-      >
-        <FaInstagram />
+        <FaLinkedin />
       </a>
       <a
         target="_blank"
