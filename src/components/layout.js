@@ -51,6 +51,7 @@ const Grid = styled.div`
   > footer {
     text-align: center;
     margin: 1rem 0;
+    margin-bottom: 2rem;
   }
 `;
 
