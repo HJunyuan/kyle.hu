@@ -13,7 +13,7 @@ const Row = styled.p`
   }
 `;
 
-export default () => {
+const Social = () => {
   return (
     <Row>
       <a
@@ -37,3 +37,5 @@ export default () => {
     </Row>
   );
 };
+
+export default Social;

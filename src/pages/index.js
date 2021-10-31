@@ -4,10 +4,10 @@ import styled from "styled-components";
 
 import landing from "../images/landing.svg";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import Social from "../components/Social";
 
-export default () => {
+const Index = () => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -23,7 +23,7 @@ export default () => {
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`}
       />
       <Grid>
@@ -70,6 +70,8 @@ const Grid = styled.div`
     }
   }
 `;
+
+export default Index;
 
 // const content = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis nunc. Duis ultricies lacus sed turpis tincidunt id. Eu lobortis elementum nibh tellus molestie nunc. Et malesuada fames ac turpis. Pharetra pharetra massa massa ultricies mi quis. Scelerisque varius morbi enim nunc. Orci a scelerisque purus semper eget duis at. Dictum varius duis at consectetur lorem. In hac habitasse platea dictumst quisque sagittis. Adipiscing tristique risus nec feugiat. Et egestas quis ipsum suspendisse ultrices gravida. Libero id faucibus nisl tincidunt eget nullam non.
 
